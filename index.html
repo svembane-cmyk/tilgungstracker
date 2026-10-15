@@ -17,10 +17,10 @@ button{touch-action:manipulation}
 @media(max-width:650px){.forecast-cards{grid-template-columns:1fr 1fr}.forecast-cards .panel:last-child{grid-column:1/-1}#forecastForm .formgrid{grid-template-columns:1fr}.tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.tab{font-size:13px;padding:10px}.grid .metric{font-size:clamp(17px,5vw,23px);letter-spacing:-.7px;white-space:nowrap}.big{font-size:21px}}
 @media(prefers-reduced-motion:reduce){.fill{transition:none}}
 </style></head><body><a class="skip-link" href="#entries">Zum Inhalt springen</a><div class="shell"><div id="dataWarning" class="note" role="status" hidden>Dein Browser verhindert die dauerhafte Speicherung. Bitte nutze die JSON-Sicherung, bevor du die Seite schließt.</div><header class="top"><div><div class="eyebrow">Mein Finanzüberblick</div><h1 class="brand">Tilgung<span class="accent">.</span></h1><div class="sub">Unterhaltsrückstände im Blick — Schritt für Schritt.</div></div><div class="pill">✦ Dein persönlicher Tracker</div></header>
-<section class="grid"><div class="panel"><div class="metric-label">Aktuelle Restschuld</div><div id="outstanding" class="metric accent">–</div><div class="muted">Offene Rückstände</div></div><div class="panel"><div class="metric-label">Bereits getilgt</div><div id="paid" class="metric good">–</div><div class="muted">Auf Rückstände angerechnet</div></div><div class="panel"><div class="metric-label">Laufender Unterhalt / Monat</div><div id="ongoing" class="metric">–</div><div class="muted">Separat von den Rückständen</div></div></section>
-<section class="hero"><div class="flex"><div><div class="eyebrow">Dein Fortschritt</div><h2 class="title" style="margin-top:8px">Jede Tilgung zählt.</h2></div><div id="percent" class="big accent">0 %</div></div><div class="progress"><div id="bar" class="fill" style="width:0%"></div></div><div class="flex sub"><span id="baseLabel">Startschuld</span><span id="restLabel">Noch offen</span></div></section>
-<nav class="tabs section" aria-label="Bereiche"><button class="tab active" data-tab="entries">Zahlungen</button><button class="tab" data-tab="monthly">Monatsübersicht</button><button class="tab" data-tab="forecast">Tilgungsprognose</button><button class="tab" data-tab="settings">Einstellungen</button></nav>
-<section id="entries" class="content active"><div class="panel"><h2 class="title">Neue Buchung</h2><p class="sub">Trage nur den Anteil als Tilgung ein, der tatsächlich auf alte Rückstände angerechnet wurde.</p><form id="entryForm"><div class="formgrid"><div><label for="date">Datum</label><input required id="date" type="date"></div><div><label for="kind">Buchungsart</label><select id="kind"><option value="tilgung">Tilgung alter Rückstände</option><option value="laufend">Laufender Unterhalt</option><option value="korrektur_plus">Rückstand erhöht / Nachforderung</option><option value="korrektur_minus">Rückstand reduziert / Korrektur</option></select></div><div><label for="amount">Betrag in €</label><input id="amount" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="z. B. 100,00" required></div><div><label for="source">Zahlungsweg</label><select id="source"><option>Lohnpfändung</option><option>Überweisung</option><option>Andere Zahlung</option><option>Behördliche Korrektur</option></select></div><div style="grid-column:1/-1"><label for="note">Notiz (optional)</label><input id="note" maxlength="160" placeholder="z. B. Abrechnung Oktober / Bescheid"></div></div><div class="actions"><button class="primary" type="submit">+ Buchung speichern</button></div></form></div><div class="section flex"><h2 class="title">Alle Buchungen</h2><span id="count" class="sub"></span></div><div class="panel tablewrap"><table><thead><tr><th>Datum</th><th>Art</th><th>Zahlungsweg</th><th>Notiz</th><th>Betrag</th><th></th></tr></thead><tbody id="rows"></tbody></table><div id="noEntries" class="empty">Noch keine Buchungen vorhanden.</div></div></section>
+<section class="grid"><div class="panel"><div class="metric-label">Aktuelle Restschuld</div><div id="outstanding" class="metric accent">–</div><div class="muted">Offene Rückstände</div></div><div class="panel"><div class="metric-label">Bereits getilgt</div><div id="paid" class="metric good">–</div><div class="muted">Historischer Stand + neue Tilgungen</div></div><div class="panel"><div class="metric-label">Laufender Unterhalt / Monat</div><div id="ongoing" class="metric">–</div><div class="muted">Separat von den Rückständen</div></div></section>
+<section class="hero"><div class="flex"><div><div class="eyebrow">Dein Fortschritt</div><h2 class="title" style="margin-top:8px">Jede Tilgung zählt.</h2></div><div id="percent" class="big accent">0 %</div></div><div class="progress" role="progressbar" aria-label="Tilgungsfortschritt" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressbar"><div id="bar" class="fill" style="width:0%"></div></div><div class="flex sub"><span id="baseLabel">Startschuld</span><span id="restLabel">Noch offen</span></div></section>
+<section class="panel" style="margin-top:14px"><h2 class="title">Deine Meilensteine</h2><div id="milestones" class="formgrid" style="margin-top:14px"></div></section><nav class="tabs section" aria-label="Bereiche"><button class="tab active" data-tab="entries">Zahlungen</button><button class="tab" data-tab="monthly">Monatsübersicht</button><button class="tab" data-tab="forecast">Tilgungsprognose</button><button class="tab" data-tab="settings">Einstellungen</button></nav>
+<section id="entries" class="content active"><div class="panel"><h2 class="title">Neue Buchung</h2><p class="sub">Die bereits berechneten 3.926 € sind im Anfangsstand enthalten. Trage hier nur zusätzliche, neue Zahlungen ein, die auf alte Rückstände angerechnet wurden.</p><form id="entryForm"><div class="formgrid"><div><label for="date">Datum</label><input required id="date" type="date"></div><div><label for="kind">Buchungsart</label><select id="kind"><option value="tilgung">Tilgung alter Rückstände</option><option value="laufend">Laufender Unterhalt</option><option value="korrektur_plus">Rückstand erhöht / Nachforderung</option><option value="korrektur_minus">Rückstand reduziert / Korrektur</option></select></div><div><label for="amount">Betrag in €</label><input id="amount" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="z. B. 100,00" required></div><div><label for="source">Zahlungsweg</label><select id="source"><option>Lohnpfändung</option><option>Überweisung</option><option>Andere Zahlung</option><option>Behördliche Korrektur</option></select></div><div style="grid-column:1/-1"><label for="note">Notiz (optional)</label><input id="note" maxlength="160" placeholder="z. B. Abrechnung Oktober / Bescheid"></div></div><div class="actions"><button class="primary" type="submit">+ Buchung speichern</button></div></form></div><div class="section flex"><h2 class="title">Alle Buchungen</h2><span id="count" class="sub"></span></div><div class="panel tablewrap"><table><thead><tr><th>Datum</th><th>Art</th><th>Zahlungsweg</th><th>Notiz</th><th>Betrag</th><th></th></tr></thead><tbody id="rows"></tbody></table><div id="noEntries" class="empty">Noch keine Buchungen vorhanden.</div></div></section>
 <section id="monthly" class="content"><div class="panel"><h2 class="title">Monatsübersicht</h2><p class="sub">Buchungen nach Kalendermonaten, getrennt nach laufendem Unterhalt und Schuldenabbau.</p><div class="tablewrap"><table><thead><tr><th>Monat</th><th>Rückstände getilgt</th><th>Laufender Unterhalt</th><th>Erhöhungen</th><th>Reduzierungen</th></tr></thead><tbody id="monthRows"></tbody></table><div id="noMonths" class="empty">Noch keine Monate mit Buchungen.</div></div></div></section>
 
 <section id="forecast" class="content" aria-label="Tilgungsprognose">
@@ -52,7 +52,7 @@ button{touch-action:manipulation}
   </div>
   <div class="note" style="margin-top:14px">Die Prognose ist eine <strong>Modellrechnung</strong>: ohne neue Unterhaltsrückstände, Zinsen oder Gebühren. Bereits erfasste Zahlungen sind in der heutigen Restschuld berücksichtigt. Die Prognose bucht keine zukünftigen Zahlungen automatisch ein.</div>
 </section>
-<section id="settings" class="content"><div class="panel"><h2 class="title">Startwerte bearbeiten</h2><p class="sub">Hier kannst du den bestätigten Anfangsstand und den laufenden Unterhalt eintragen. Bereits vorhandene Daten aus der bisherigen App bleiben bei Nutzung desselben Browsers erhalten.</p><form id="settingsForm"><div class="formgrid"><div><label for="starting">Rückstand zum Startdatum (€)</label><input id="starting" type="number" min="0" step="0.01" required></div><div><label for="ongoingMonthly">Laufender Unterhalt pro Monat (€)</label><input id="ongoingMonthly" type="number" min="0" step="0.01" required></div><div><label for="startDate">Stand der Startschuld am</label><input id="startDate" type="date" required></div></div><div class="actions"><button class="primary" type="submit">Einstellungen speichern</button></div></form><div class="note" style="margin-top:18px">Wichtig: Trage einen möglichst bestätigten Schuldenstand ein und verwende für alte Rückstände nur Zahlungen ab dem eingestellten Startdatum. Sonst könnten Beträge doppelt berücksichtigt werden. Laufender Unterhalt wird nicht automatisch von der Restschuld abgezogen.</div></div><div class="panel" style="margin-top:14px"><h2 class="title">Datensicherung</h2><p class="sub">Deine Einträge werden nicht an GitHub übertragen. Sie bleiben in diesem Browser auf diesem Gerät. Sichere sie regelmäßig, insbesondere bevor du Browserdaten löschst oder das Gerät wechselst.</p><div class="actions"><button id="exportJson" type="button" class="secondary">↓ Sicherung (JSON)</button><button id="exportCsv" type="button" class="secondary">↓ Buchungen (CSV)</button><button id="importButton" type="button" class="secondary">↑ Sicherung importieren</button><input id="importInput" type="file" accept=".json,application/json" class="hide"><button id="clear" type="button" class="danger">Alle Buchungen löschen</button></div></div></section><p class="footer">Privater Überblick, keine offizielle Forderungsabrechnung. Zinsen, Gebühren und Änderungen werden nur erfasst, wenn du sie selbst einträgst. Die tatsächliche Verrechnung bestimmt die zuständige Stelle anhand der Abrechnung.</p></div>
+<section id="settings" class="content"><div class="panel"><h2 class="title">Startwerte bearbeiten</h2><p class="sub">Die ersten 8 Monate sind als historische Sammelsumme von 3.926 € berücksichtigt, nicht als acht erfundene Einzelbuchungen. Hier kannst du die Werte anpassen, wenn du eine offizielle Abrechnung erhältst. Bereits vorhandene Daten aus der bisherigen App bleiben bei Nutzung desselben Browsers erhalten.</p><form id="settingsForm"><div class="formgrid"><div><label for="starting">Rückstand zum Startdatum (€)</label><input id="starting" type="number" min="0" step="0.01" required></div><div><label for="initialPaid">Davon historisch bereits getilgt (€)</label><input id="initialPaid" type="number" min="0" step="0.01" required></div><div><label for="ongoingMonthly">Laufender Unterhalt pro Monat (€)</label><input id="ongoingMonthly" type="number" min="0" step="0.01" required></div><div><label for="startDate">Stand der Startschuld am</label><input id="startDate" type="date" required></div></div><div class="actions"><button class="primary" type="submit">Einstellungen speichern</button></div></form><div class="note" style="margin-top:18px">Wichtig: Trage einen möglichst bestätigten Schuldenstand ein und verwende für alte Rückstände nur Zahlungen ab dem eingestellten Startdatum. Sonst könnten Beträge doppelt berücksichtigt werden. Laufender Unterhalt wird nicht automatisch von der Restschuld abgezogen.</div></div><div class="panel" style="margin-top:14px"><h2 class="title">Datensicherung</h2><p class="sub">Deine Einträge werden nicht an GitHub übertragen. Sie bleiben in diesem Browser auf diesem Gerät. Sichere sie regelmäßig, insbesondere bevor du Browserdaten löschst oder das Gerät wechselst.</p><div class="actions"><button id="exportJson" type="button" class="secondary">↓ Sicherung (JSON)</button><button id="exportCsv" type="button" class="secondary">↓ Buchungen (CSV)</button><button id="importButton" type="button" class="secondary">↑ Sicherung importieren</button><input id="importInput" type="file" accept=".json,application/json" class="hide"><button id="clear" type="button" class="danger">Alle Buchungen löschen</button></div></div></section><p class="footer">Privater Überblick, keine offizielle Forderungsabrechnung. Historische Tilgung aus 7.078 € Pfändung minus 8 × 394 € laufendem Unterhalt rechnerisch geschätzt. Zinsen, Gebühren und Änderungen werden nur erfasst, wenn du sie selbst einträgst. Die tatsächliche Verrechnung bestimmt die zuständige Stelle anhand der Abrechnung.</p></div>
 <script>
 (()=>{
   'use strict';
@@ -67,7 +67,7 @@ button{touch-action:manipulation}
     return String(Math.floor(z/12)).padStart(4,'0')+'-'+String(z%12+1).padStart(2,'0');
   };
   const currentMonth=todayIso().slice(0,7);
-  const defaults = {starting:0,monthly:0,startDate:todayIso(),entries:[],forecastMonthly:0,forecastStart:addMonths(currentMonth,1)};
+  const defaults = {starting:14336,initialPaid:3926,monthly:394,startDate:todayIso(),entries:[],forecastMonthly:490.75,forecastStart:addMonths(currentMonth,1)};
   const toCents = n=>Math.round(Number(n)*100);
   const fromCents = n=>n/100;
   const money=n=>new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'}).format(n);
@@ -77,14 +77,14 @@ button{touch-action:manipulation}
   const isoMonth = s=>typeof s==='string'&&/^\d{4}-(0[1-9]|1[0-2])$/.test(s);
   function validData(x){
     return x&&typeof x==='object'&&Number.isFinite(x.starting)&&x.starting>=0&&Number.isFinite(x.monthly)&&x.monthly>=0
-      &&isoDate(x.startDate)&&Array.isArray(x.entries)&&x.entries.length<=20000&&x.entries.every(e=>
+      &&(x.initialPaid===undefined||(Number.isFinite(x.initialPaid)&&x.initialPaid>=0))&&isoDate(x.startDate)&&Array.isArray(x.entries)&&x.entries.length<=20000&&x.entries.every(e=>
       typeof e.id==='string'&&isoDate(e.date)&&Object.hasOwn(kinds,e.kind)&&Number.isFinite(e.amount)&&e.amount>0
       &&typeof e.source==='string'&&typeof e.note==='string');
   }
   let state={...defaults};
   try {
     const saved=JSON.parse(localStorage.getItem(KEY));
-    if(validData(saved)) state={...defaults,...saved,
+    if(validData(saved)) state={...defaults,...saved,initialPaid:Number.isFinite(saved.initialPaid)&&saved.initialPaid>=0?saved.initialPaid:0,
       forecastMonthly: Number.isFinite(saved.forecastMonthly)&&saved.forecastMonthly>=0?saved.forecastMonthly:0,
       forecastStart:isoMonth(saved.forecastStart)?saved.forecastStart:defaults.forecastStart};
   }catch(e){if(e?.name==='SecurityError')$('#dataWarning').hidden=false;}
@@ -94,7 +94,7 @@ button{touch-action:manipulation}
   }
   function td(value){const cell=document.createElement('td');cell.textContent=value;return cell;}
   function stats(){
-    let paid=0,plus=0,minus=0;
+    let paid=toCents(state.initialPaid),plus=0,minus=0;
     state.entries.forEach(e=>{
       if(e.kind==='tilgung')paid+=toCents(e.amount);
       if(e.kind==='korrektur_plus')plus+=toCents(e.amount);
@@ -111,11 +111,14 @@ button{touch-action:manipulation}
     $('#paid').textContent=money(fromCents(s.paid));
     $('#ongoing').textContent=money(state.monthly);
     $('#percent').textContent=new Intl.NumberFormat('de-DE',{maximumFractionDigits:1}).format(s.progress)+' %';
-    $('#bar').style.width=s.progress+'%';
+    $('#bar').style.width=s.progress+'%';$('#progressbar').setAttribute('aria-valuenow',String(s.progress));
     $('#baseLabel').textContent='Rechnerischer Rückstand: '+money(fromCents(s.total));
     $('#restLabel').textContent='Offen: '+money(fromCents(s.remaining));
-    $('#count').textContent=state.entries.length+' Buchung(en)';
-    $('#starting').value=state.starting;
+    $('#count').textContent=state.entries.length+' neue Buchung(en) · historische Tilgung '+money(state.initialPaid)+' separat berücksichtigt';
+    const milestoneDefs=[['Unter 10.000 €',10000],['Unter 7.500 €',7500],['50 % geschafft',7168],['Unter 5.000 €',5000],['75 % geschafft',3584],['Unter 2.500 €',2500],['Unter 1.000 €',1000],['Rückstand ausgeglichen',0]];
+    const milestones=$('#milestones'); milestones.replaceChildren();
+    milestoneDefs.forEach(([label,limit])=>{const reached=limit===0?s.remaining===0:(limit===7168||limit===3584?s.remaining<=toCents(limit):s.remaining<toCents(limit));const el=document.createElement('div');el.className='sub';el.style.fontSize='13px';el.textContent=(reached?'✅ ':'☐ ')+label;milestones.append(el);});
+    $('#starting').value=state.starting;$('#initialPaid').value=state.initialPaid;
     $('#ongoingMonthly').value=state.monthly;
     $('#startDate').value=state.startDate;
     $('#forecastMonthly').value=state.forecastMonthly;
@@ -196,9 +199,9 @@ button{touch-action:manipulation}
     save();$('#amount').value='';$('#note').value='';
   });
   $('#settingsForm').addEventListener('submit',e=>{
-    e.preventDefault();const starting=Number($('#starting').value),monthly=Number($('#ongoingMonthly').value),startDate=$('#startDate').value;
-    if(!Number.isFinite(starting)||starting<0||!Number.isFinite(monthly)||monthly<0||!isoDate(startDate)){alert('Bitte gültige Startwerte angeben.');return;}
-    state.starting=fromCents(toCents(starting));state.monthly=fromCents(toCents(monthly));state.startDate=startDate;
+    e.preventDefault();const starting=Number($('#starting').value),initialPaid=Number($('#initialPaid').value),monthly=Number($('#ongoingMonthly').value),startDate=$('#startDate').value;
+    if(!Number.isFinite(starting)||starting<0||!Number.isFinite(initialPaid)||initialPaid<0||initialPaid>starting||!Number.isFinite(monthly)||monthly<0||!isoDate(startDate)){alert('Bitte gültige Startwerte angeben.');return;}
+    state.starting=fromCents(toCents(starting));state.initialPaid=fromCents(toCents(initialPaid));state.monthly=fromCents(toCents(monthly));state.startDate=startDate;
     save();alert('Einstellungen gespeichert.');
   });
   $('#forecastForm').addEventListener('submit',e=>{
@@ -232,7 +235,7 @@ button{touch-action:manipulation}
       if(confirm('Aktuelle Einträge und Einstellungen durch diese Sicherung ersetzen?')){
         state={...defaults,...obj,
           forecastMonthly:Number.isFinite(obj.forecastMonthly)&&obj.forecastMonthly>=0?obj.forecastMonthly:0,
-          forecastStart:isoMonth(obj.forecastStart)?obj.forecastStart:defaults.forecastStart};
+          forecastStart:isoMonth(obj.forecastStart)?obj.forecastStart:defaults.forecastStart,initialPaid:Number.isFinite(obj.initialPaid)&&obj.initialPaid>=0?obj.initialPaid:0};
         save();alert('Sicherung erfolgreich importiert.');
       }
     }catch(err){alert('Import nicht möglich: '+err.message);}
