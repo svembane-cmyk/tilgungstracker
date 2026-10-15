@@ -179,7 +179,70 @@ body[data-theme="retro"] .curve-divider:before{content:""; position:absolute; in
  body[data-theme="retro"] .card.main{border-radius:28px 28px 42px 28px}
 }
 
-</style></head><body data-theme="retro"><main class="shell"><header class="mast"><div class="mast-copy"><div class="eyebrow">Retro Autumn Edition</div><h1 class="brand">Tilgung<span style="color:var(--accent)">.</span></h1><div class="sub">Moderne Übersicht für deine vollständige Startschuld, einzelne Lohnabrechnungen und automatische Durchschnittsberechnung.</div></div><div class="season-badge"><span class="season-dot"></span> Hochwertig · Warm · Übersichtlich</div></header>
+
+/* Four distinct visual systems. Data and computation use a separate storage key. */
+.design-bar{margin:0 0 23px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:18px 22px;border:1px solid #dbc0a7;border-radius:24px;background:#fffbf4e8;box-shadow:0 9px 25px #58382212}
+.design-bar-heading{display:flex;flex-direction:column;gap:4px;color:#443027}
+.design-bar-heading span{font-size:10px;font-weight:900;letter-spacing:2px;opacity:.65}
+.design-bar-heading strong{font-size:15px;font-weight:750}
+.design-options{display:flex;flex-wrap:wrap;gap:9px}
+.design-option{display:flex;align-items:center;gap:8px;background:#ffffff8a;color:#574036;border:1px solid #d9c5b1;padding:8px 12px 8px 8px;border-radius:999px;font-size:12px;font-weight:800;transition:background .2s,box-shadow .2s,transform .2s}
+.design-option:hover{transform:translateY(-1px)}.design-option[aria-pressed=true]{background:#4f3228;color:#fff4e6;border-color:#4f3228;box-shadow:0 4px 14px #51302130}
+.design-option:focus-visible{outline:3px solid #bf754d;outline-offset:3px}
+.swatch{display:inline-block;width:24px;height:24px;border-radius:50%;border:2px solid #fff8;flex:0 0 auto}
+.retro-swatch{background:conic-gradient(#462920 0 25%,#f7dfc5 0 50%,#ae5a36 0 75%,#f7dfc5 0)}
+.espresso-swatch{background:linear-gradient(135deg,#211713 45%,#b87846 45% 70%,#e3b888 70%)}
+.feminine-swatch{background:linear-gradient(135deg,#f3c6c3 20%,#a24d59 20% 68%,#f6e6dd 68%)}
+.clean-swatch{background:linear-gradient(135deg,#f5efe5 38%,#74816c 38% 70%,#c1aa91 70%)}
+body[data-design] .theme-picker{display:none}
+/* Espresso: rich dark surfaces, warm amber typography */
+body[data-design="espresso"]{background:radial-gradient(circle at 90% 0%,#553828,transparent 36%),linear-gradient(160deg,#201714,#30211c);color:#f4e5d7}
+body[data-design="espresso"] .mast,body[data-design="espresso"] .design-bar,body[data-design="espresso"] .panel,body[data-design="espresso"] .card:not(.main){background:linear-gradient(145deg,#332721,#291d19);border-color:#61483a;box-shadow:0 16px 33px #100b0980;color:#f7e3d4}
+body[data-design="espresso"] .brand,body[data-design="espresso"] .sectionTitle,body[data-design="espresso"] .design-bar-heading,body[data-design="espresso"] .milestone strong{color:#ffe6c9}
+body[data-design="espresso"] .sub,body[data-design="espresso"] .muted,body[data-design="espresso"] .foot,body[data-design="espresso"] .card .label{color:#cfb3a2}
+body[data-design="espresso"] .eyebrow,body[data-design="espresso"] .season-badge{background:#4e3528;color:#ecc9a6;border-color:#825741}
+body[data-design="espresso"] .card.main{background:linear-gradient(135deg,#815035,#513020);border-color:#b1774c}
+body[data-design="espresso"] .number,body[data-design="espresso"] .card .number{color:#f1c699}
+body[data-design="espresso"] .card .olive{color:#c4cda0!important}body[data-design="espresso"] .card .rust{color:#eda779!important}
+body[data-design="espresso"] .progress{background:#473228;border-color:#705441}body[data-design="espresso"] .progressfill{background:linear-gradient(90deg,#b77b50,#e5bd86)}
+body[data-design="espresso"] .pill,body[data-design="espresso"] .tip,body[data-design="espresso"] .milestone,body[data-design="espresso"] .forecastCard{background:#433127;color:#f7e5d4;border-color:#6e5040}
+body[data-design="espresso"] .milestone.done{background:#354235;border-color:#5d7859}body[data-design="espresso"] .milestone small{color:#c9af9b}
+body[data-design="espresso"] .field label{color:#f0ceb0}body[data-design="espresso"] .field input,body[data-design="espresso"] .field select{background:#261b18;color:#fff2e5;border-color:#745342;color-scheme:dark}
+body[data-design="espresso"] .btn{background:linear-gradient(160deg,#e6ae74,#be7b48);color:#2d1d17}body[data-design="espresso"] .btn.secondary,body[data-design="espresso"] .smallBtn{background:#50372b;color:#f8dfc5;border-color:#876046}
+body[data-design="espresso"] .tablewrap{background:#291e1a;border-color:#66483a}body[data-design="espresso"] .table th{background:#4a3329;color:#e3bb99;border-color:#75513c}
+body[data-design="espresso"] .table td{color:#f1dfce;border-color:#4b372d}body[data-design="espresso"] .table tbody tr:nth-child(even){background:#31221e}body[data-design="espresso"] .table tbody tr:hover{background:#433025}
+body[data-design="espresso"] .design-option{background:#3b2923;color:#e8c9af;border-color:#75533f}body[data-design="espresso"] .design-option[aria-pressed=true]{background:#dba170;color:#251813;border-color:#dba170}
+/* Soft feminine editorial: blush + burgundy, pill-shapes, airy surfaces */
+body[data-design="feminine"]{background:radial-gradient(circle at 90% 0%,#eac0ba,transparent 33%),linear-gradient(180deg,#fbefea,#f6e4e0);color:#553039}
+body[data-design="feminine"] .mast,body[data-design="feminine"] .design-bar,body[data-design="feminine"] .panel,body[data-design="feminine"] .card:not(.main){background:linear-gradient(145deg,#fff7f3,#fdf0ed);border-color:#e9cfc9;box-shadow:0 16px 38px #90586118;color:#5f3943;border-radius:36px}
+body[data-design="feminine"] .brand,body[data-design="feminine"] .sectionTitle{color:#703942;font-family:Georgia,serif;font-style:italic}
+body[data-design="feminine"] .card.main{background:linear-gradient(135deg,#a95e67,#743f4a);border-color:#af7b7b}
+body[data-design="feminine"] .eyebrow,body[data-design="feminine"] .season-badge{background:#fae5e2;color:#8e4e58;border-color:#e7c4bf}
+body[data-design="feminine"] .progress{background:#f1d7d1;border-color:#e9c5bf}body[data-design="feminine"] .progressfill{background:linear-gradient(90deg,#a65e6a,#db9b91)}
+body[data-design="feminine"] .pill,body[data-design="feminine"] .tip,body[data-design="feminine"] .milestone,body[data-design="feminine"] .forecastCard{background:#fff0ea;border-color:#e7ccc5;color:#6b3e47}
+body[data-design="feminine"] .milestone.done{background:#f1e9e3;border-color:#dcbdb5}
+body[data-design="feminine"] .field input,body[data-design="feminine"] .field select{background:#fffbf9;border-color:#e3c4bd;color:#603740;border-radius:24px}
+body[data-design="feminine"] .btn{background:linear-gradient(150deg,#b66a77,#914c5b);color:#fffaf8;border-radius:999px}
+body[data-design="feminine"] .btn.secondary,body[data-design="feminine"] .smallBtn{background:#fae9e5;color:#703c49;border-color:#e2c2bb}
+body[data-design="feminine"] .tablewrap{border-color:#e7c9c5;background:#fff9f6}body[data-design="feminine"] .table th{background:#f8e6e2;color:#8d5660;border-color:#eacdc8}body[data-design="feminine"] .table td{color:#593540;border-color:#f1e0dc}body[data-design="feminine"] .table tbody tr:nth-child(even){background:#fff3ef}
+body[data-design="feminine"] .design-option[aria-pressed=true]{background:#8f4c5b;color:#fff;border-color:#8f4c5b}
+/* Clean editorial: no patterns, quiet contrast, minimal depth */
+body[data-design="clean"]{background:#f5f1eb;color:#342f2a}
+body[data-design="clean"] .mast,body[data-design="clean"] .design-bar,body[data-design="clean"] .panel,body[data-design="clean"] .card:not(.main){background:#fffdfa;border-color:#e6ded3;box-shadow:0 5px 24px #4237280b;border-radius:24px}
+body[data-design="clean"] .mast:before,body[data-design="clean"] .mast:after,body[data-design="clean"] .panel:before,body[data-design="clean"] .card:after,body[data-design="clean"] .card.main:before,body[data-design="clean"] .card.main:after,body[data-design="clean"] .curve-divider{display:none}
+body[data-design="clean"] .brand,body[data-design="clean"] .sectionTitle{color:#40352d;font-family:system-ui,-apple-system,sans-serif;font-style:normal;font-weight:720}
+body[data-design="clean"] .card.main{background:#415046;border-color:#415046;border-radius:24px}
+body[data-design="clean"] .eyebrow,body[data-design="clean"] .season-badge{background:#e9eee7;color:#556451;border-color:#d9e0d5}
+body[data-design="clean"] .progress{background:#e9e7df;border-color:#d8d5ce}body[data-design="clean"] .progressfill{background:#64765c}
+body[data-design="clean"] .pill,body[data-design="clean"] .tip,body[data-design="clean"] .milestone,body[data-design="clean"] .forecastCard{background:#f6f4ef;border-color:#e4e0d9;color:#45443d;border-radius:18px}
+body[data-design="clean"] .milestone.done{background:#ecf1e9}
+body[data-design="clean"] .field input,body[data-design="clean"] .field select{background:#fff;border-color:#ddd8cf;color:#3e3932;border-radius:12px}
+body[data-design="clean"] .btn{background:#526252;color:#fff;border-radius:12px;box-shadow:none}body[data-design="clean"] .btn.secondary,body[data-design="clean"] .smallBtn{background:#f5f3ed;color:#425242;border-color:#d9ded4;box-shadow:none}
+body[data-design="clean"] .tablewrap{border-color:#e3dfd8;background:#fff}body[data-design="clean"] .table th{background:#f4f3ef;color:#5f675d;border-color:#dddcd4}body[data-design="clean"] .table td{color:#3e3c36;border-color:#ece9e3}body[data-design="clean"] .table tbody tr:nth-child(even){background:#faf9f6}
+body[data-design="clean"] .design-option[aria-pressed=true]{background:#4d5e4e;color:#fff;border-color:#4d5e4e}
+@media(max-width:730px){.design-bar{padding:15px}.design-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}.design-option{font-size:11px;justify-content:flex-start}}
+</style></head><body data-theme="retro" data-design="retro"><main class="shell"><header class="mast"><div class="mast-copy"><div class="eyebrow">Retro Autumn Edition</div><h1 class="brand">Tilgung<span style="color:var(--accent)">.</span></h1><div class="sub">Moderne Übersicht für deine vollständige Startschuld, einzelne Lohnabrechnungen und automatische Durchschnittsberechnung.</div></div><div class="season-badge"><span class="season-dot"></span> Hochwertig · Warm · Übersichtlich</div></header>
+<div class="design-bar" aria-label="Design auswählen"><div class="design-bar-heading"><span>DEIN LOOK</span><strong>Wie soll deine Tilgung aussehen?</strong></div><div class="design-options" role="group" aria-label="Farbschema"><button type="button" class="design-option" data-design="retro" aria-pressed="true"><i class="swatch retro-swatch"></i><span>Retro Autumn</span></button><button type="button" class="design-option" data-design="espresso" aria-pressed="false"><i class="swatch espresso-swatch"></i><span>Espresso & Caramel</span></button><button type="button" class="design-option" data-design="feminine" aria-pressed="false"><i class="swatch feminine-swatch"></i><span>Femininer & Edler</span></button><button type="button" class="design-option" data-design="clean" aria-pressed="false"><i class="swatch clean-swatch"></i><span>Cleaner & Moderner</span></button></div></div>
 <section class="topcards" aria-label="Übersicht"><article class="card main"><div class="label">Ursprünglicher Unterhaltsrückstand</div><div class="number" id="startView">14.336,00 €</div><div class="label">Dein fester Ausgangspunkt</div></article><article class="card"><div class="label">Davon durch Einträge getilgt</div><div class="number sm olive" id="paidView">0,00 €</div><div class="muted">Nur erfasste Tilgungen</div></article><article class="card"><div class="label">Rechnerisch noch offen</div><div class="number sm rust" id="restView">14.336,00 €</div><div class="muted">Ohne ungebuchte Gebühren</div></article></section>
 <section class="section panel"><div class="progressHead"><h2 class="sectionTitle" style="margin:0">Dein Fortschritt</h2><strong id="percentView" style="color:var(--accent)">0 %</strong></div><div class="progress" role="progressbar" aria-label="Tilgungsfortschritt" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressOuter"><div class="progressfill" id="progressFill"></div></div><div class="progressHead"><div class="muted" id="entryCount">0 Lohnzettel erfasst</div><div class="pill" id="nextGoal">Nächstes Ziel: unter 10.000 €</div></div></section>
 <div class="curve-divider" aria-hidden="true"></div>
@@ -202,15 +265,19 @@ const target=$('entryCount');new MutationObserver(refresh).observe(target,{child
 })();
 </script><script>
 (()=>{'use strict';
-const themeKey='tilgung-design-v1';
-const buttons=[...document.querySelectorAll('[data-choice]')];
-function setTheme(theme){
-  if(!['espresso','retro'].includes(theme))theme='espresso';
-  document.body.dataset.theme=theme;
-  buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.choice===theme)));
-  document.querySelector('meta[name="theme-color"]').content=theme==='espresso'?'#1b1513':'#f5ede1';
-  try{localStorage.setItem(themeKey,theme)}catch{}
+const key='tilgung-vier-designs-v1';
+const allowed=['retro','espresso','feminine','clean'];
+const buttons=[...document.querySelectorAll('[data-design]')];
+function choose(theme){
+  if(!allowed.includes(theme))theme='retro';
+  document.body.dataset.design=theme;
+  buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.design===theme)));
+  const themeColors={retro:'#f5eadc',espresso:'#211916',feminine:'#f7e7e1',clean:'#f5f0e8'};
+  const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=themeColors[theme];
+  try{localStorage.setItem(key,theme)}catch{}
 }
-const saved='retro'; setTheme(saved); buttons.forEach(b=>b.addEventListener('click',()=>setTheme('retro')));
+let saved='retro';try{saved=localStorage.getItem(key)||saved}catch{}
+choose(saved);
+buttons.forEach(b=>b.addEventListener('click',()=>choose(b.dataset.design)));
 })();
 </script></body></html>
