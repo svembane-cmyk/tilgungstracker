@@ -2,9 +2,69 @@
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#432b25"><title>Tilgung · Mein Rückstand</title><link rel="icon" type="image/png" href="./favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png"><link rel="manifest" href="./manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Tilgung"><meta name="apple-mobile-web-app-status-bar-style" content="default"><style>
 :root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;color:#372a22;background:#f4eee5;font-synthesis:none}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 8% 0%,#ead2b7,transparent 43%),#f4eee5;min-height:100vh}button,input,select{font:inherit}button{cursor:pointer}.shell{max-width:1100px;margin:auto;padding:32px 20px 65px}.mast{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:23px}.eyebrow{font-size:11px;letter-spacing:2.4px;font-weight:800;color:#986544;text-transform:uppercase}.brand{font-family:Georgia,serif;font-size:clamp(34px,5vw,51px);font-weight:600;margin:7px 0 4px;color:#4b2b22;letter-spacing:-1.8px}.sub{font-size:13px;color:#816f60;line-height:1.5}.season{color:#7d5039;background:#e9d9c6;border:1px solid #d3b99f;padding:10px 15px;border-radius:30px;font-size:12px;font-weight:700}.topcards{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:13px}.card,.panel{background:#fffaf2;border:1px solid #e5d4c0;border-radius:19px;padding:22px;box-shadow:0 8px 25px #5c3b2410}.card.main{background:#4b2d25;color:#ffedd9;border-color:#4b2d25}.card .label{font-size:12px;color:#846b5a}.card.main .label{color:#e9cab0}.number{font-size:clamp(23px,3.5vw,36px);letter-spacing:-1.2px;font-weight:800;margin:13px 0 6px;font-variant-numeric:tabular-nums}.number.sm{font-size:clamp(22px,3vw,31px)}.rust{color:#ad542f}.olive{color:#5b6a39}.card.main .number{color:#ffdcaa}.sectionTitle{font:600 24px Georgia,serif;color:#523528;margin:0 0 15px}.section{margin-top:23px}.progress{height:13px;background:#e6d8c7;border-radius:80px;overflow:hidden;margin:16px 0 8px}.progressfill{height:100%;width:0;background:linear-gradient(90deg,#9f532e,#c98750);border-radius:80px;transition:width .3s}.progressHead{display:flex;align-items:center;justify-content:space-between;gap:12px}.muted{color:#816f60;font-size:12px}.panel{padding:23px}.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}.field label{display:block;font-size:12px;color:#674c3c;font-weight:750;margin-bottom:7px}.field input,.field select{background:#fffcf6;border:1px solid #d9c5af;color:#3c2b22;padding:12px 13px;border-radius:11px;width:100%;min-width:0;outline:none}.field input:focus,.field select:focus{border-color:#9a572e;box-shadow:0 0 0 3px #bd815b26}.formrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:17px}.formrow .wide{grid-column:span 2}.actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:18px}.btn{border:1px solid #a85c36;color:#fffaf4;background:#a85c36;border-radius:11px;font-weight:750;padding:12px 17px}.btn:hover{filter:brightness(.95)}.btn.secondary{background:#f7ede1;color:#68402c;border-color:#d5bda5}.btn.danger{background:#fff2ef;color:#923d2b;border-color:#e4b1a3}.tip{border-left:3px solid #af7846;background:#f8efdf;padding:10px 13px;font-size:12px;color:#725743;line-height:1.6;border-radius:0 8px 8px 0;margin-top:14px}.tablewrap{overflow:auto}.table{border-collapse:collapse;width:100%;min-width:760px;text-align:left}.table th{text-transform:uppercase;letter-spacing:1px;color:#806c5b;font-size:10px;white-space:nowrap}.table th,.table td{padding:13px 9px;border-bottom:1px solid #ecdecd}.table td{font-size:12px;color:#47372d}.table td.money{font-weight:750;white-space:nowrap}.table td.noteCell{max-width:190px;overflow-wrap:anywhere}.table .negative{color:#a34c2c}.table .positive{color:#5d7041}.empty{text-align:center;padding:24px;color:#7b6857;font-size:13px}.smallBtn{border:1px solid #dac5b0;border-radius:9px;background:#f5ede2;color:#6d4430;font-size:12px;padding:7px 10px}.foot{font-size:11px;line-height:1.65;color:#8c7867;margin:22px 0}.settings{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:end}.settings .field{max-width:300px}.pill{display:inline-block;border-radius:20px;background:#e2e6d7;color:#495b2f;padding:7px 11px;font-size:11px;font-weight:700}.hidden{display:none!important}@media(max-width:730px){.shell{padding:23px 13px 45px}.mast{align-items:flex-start}.season{display:none}.topcards{grid-template-columns:1fr 1fr}.card.main{grid-column:1/-1}.number{font-size:27px}.card{padding:16px}.panel{padding:17px}.formrow{grid-template-columns:1fr 1fr}.formrow .wide{grid-column:1/-1}.settings{grid-template-columns:1fr}.grid{grid-template-columns:1fr}}@media(max-width:425px){.formrow{grid-template-columns:1fr}.formrow .wide{grid-column:auto}.topcards{gap:9px}.number.sm{font-size:21px}.card .label{font-size:11px}}
 .milestoneGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.milestone{background:#f6ecdf;border:1px solid #e6d4bf;padding:12px 14px;border-radius:11px;font-size:13px;color:#795c46}.milestone.done{background:#e8ecdd;color:#506337;border-color:#ced8b8}@media(max-width:550px){.milestoneGrid{grid-template-columns:1fr}}
-</style></head><body><main class="shell"><header class="mast"><div><div class="eyebrow">Mein persönlicher Schuldenüberblick</div><h1 class="brand">Tilgung<span style="color:#b9673b">.</span></h1><div class="sub">Jeder Lohnzettel. Jeder Betrag. Alles nachvollziehbar.</div></div><div class="season">✦ Autumn Edition</div></header>
+
+/* Zwei vollständige, lokal gespeicherte Designwelten */
+body[data-theme="espresso"] {
+  --bg:#1b1513; --surface:#302521; --surface2:#382a24; --ink:#f7e8d7;
+  --muted:#c3a998; --border:#584136; --hero:#5b382a; --accent:#dca875;
+  --accentInk:#24170f; --soft:#3d3028; --tag:#443b2d; --olive:#b9c392;
+  --rust:#e2a16f; --table:#f2e5d7; --shadow:#00000035;
+}
+body[data-theme="retro"] {
+  --bg:#f5ede1; --surface:#fff9ef; --surface2:#fff8e9; --ink:#3d2a22;
+  --muted:#7b6253; --border:#d6bfa7; --hero:#603b2f; --accent:#b95c35;
+  --accentInk:#fff9ed; --soft:#f4e5cf; --tag:#e8e6d6; --olive:#586638;
+  --rust:#aa4e2e; --table:#46352c; --shadow:#70452a18;
+}
+body[data-theme] {background:var(--bg);color:var(--ink);transition:background .2s,color .2s}
+body[data-theme="espresso"] {background:radial-gradient(ellipse at 80% 0%,#634335 0%,transparent 47%),var(--bg)}
+body[data-theme="retro"] {background:radial-gradient(ellipse at 7% 0%,#e7c6a5,transparent 45%),var(--bg)}
+body[data-theme] .card,body[data-theme] .panel {background:var(--surface);color:var(--ink);border-color:var(--border);box-shadow:0 12px 26px var(--shadow)}
+body[data-theme] .card.main {background:var(--hero);border-color:var(--hero)}
+body[data-theme] .card.main .number {color:#ffe0b4}
+body[data-theme] .card.main .label {color:#e8c9a7}
+body[data-theme] .brand,body[data-theme] .sectionTitle {color:var(--ink)}
+body[data-theme] .eyebrow {color:var(--accent)}
+body[data-theme] .sub,body[data-theme] .muted,body[data-theme] .card .label,body[data-theme] .foot {color:var(--muted)}
+body[data-theme] .rust {color:var(--rust)}
+body[data-theme] .olive {color:var(--olive)}
+body[data-theme] .progress {background:var(--soft)}
+body[data-theme] .progressfill {background:linear-gradient(90deg,var(--accent),#f0c394)}
+body[data-theme] .field label {color:var(--ink)}
+body[data-theme] .field input,body[data-theme] .field select {background:var(--surface2);color:var(--ink);border-color:var(--border)}
+body[data-theme] .field input:focus {border-color:var(--accent);box-shadow:0 0 0 3px #b97a4f44}
+body[data-theme] .btn {background:var(--accent);color:var(--accentInk);border-color:var(--accent)}
+body[data-theme] .btn.secondary,body[data-theme] .smallBtn {background:var(--soft);color:var(--ink);border-color:var(--border)}
+body[data-theme] .btn.danger {background:var(--soft);color:var(--rust);border-color:var(--border)}
+body[data-theme] .tip {background:var(--soft);color:var(--ink);border-left-color:var(--accent)}
+body[data-theme] .table th {color:var(--muted)}
+body[data-theme] .table td {color:var(--table);border-bottom-color:var(--border)}
+body[data-theme] .table th {border-bottom-color:var(--border)}
+body[data-theme] .table .positive {color:var(--olive)}
+body[data-theme] .empty {color:var(--muted)}
+body[data-theme] .milestone {background:var(--soft);border-color:var(--border);color:var(--ink)}
+body[data-theme] .milestone.done {background:var(--tag);color:var(--olive);border-color:var(--border)}
+body[data-theme] .pill {background:var(--tag);color:var(--olive)}
+.theme-picker{display:flex;gap:5px;padding:5px;border:1px solid var(--border);border-radius:15px;background:var(--surface);align-self:center}
+.theme-choice{background:transparent;color:var(--muted);border:0;padding:10px 13px;border-radius:10px;font-size:12px;font-weight:800;line-height:1.1}
+.theme-choice[aria-pressed="true"]{background:var(--accent);color:var(--accentInk)}
+.theme-choice:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+body[data-theme] .topcards .card{position:relative;overflow:hidden;min-height:154px}
+body[data-theme] .card.main:after{content:"";position:absolute;right:-29px;bottom:-66px;width:190px;height:190px;border-radius:50%;border:28px solid #ffffff11;pointer-events:none}
+body[data-theme] .topcards .card:not(.main):before{content:"";display:block;height:4px;width:38px;border-radius:4px;background:var(--accent);margin-bottom:11px}
+body[data-theme] .panel{border-radius:23px}
+body[data-theme] .number {letter-spacing:-1.3px}
+body[data-theme] .sectionTitle {letter-spacing:-.5px}
+body[data-theme="retro"] .card.main {background-color:#a94e2e;background-image:linear-gradient(90deg,#ffffff0d 50%,transparent 50%),linear-gradient(#ffffff0d 50%,transparent 50%);background-size:46px 46px}
+body[data-theme="retro"] .mast:before{content:"";display:block;position:absolute;top:0;left:0;right:0;height:10px;background:repeating-conic-gradient(#4b3026 0% 25%,#f6e9d5 0% 50%) 0 0 / 30px 30px}
+body[data-theme="retro"] .sectionTitle{font-family:Georgia,serif}
+body[data-theme="espresso"] .sectionTitle {font-family:Georgia,serif;font-weight:500}
+body[data-theme="espresso"] .progressfill{background:linear-gradient(90deg,#986242,#e9b77f)}
+.design-note{font-size:11px;color:var(--muted);margin-top:8px}
+@media(max-width:750px){.mast{flex-wrap:wrap}.theme-picker{width:100%}.theme-choice{flex:1}.season{display:none}}
+</style></head><body data-theme="espresso"><main class="shell"><header class="mast"><div><div class="eyebrow">Mein persönlicher Schuldenüberblick</div><h1 class="brand">Tilgung<span style="color:var(--accent)">.</span></h1><div class="sub">Jeder Lohnzettel. Jeder Betrag. Alles nachvollziehbar.</div></div><div class="theme-picker" role="group" aria-label="Design auswählen"><button type="button" class="theme-choice" data-choice="espresso" aria-pressed="true">☕ Espresso & Caramel</button><button type="button" class="theme-choice" data-choice="retro" aria-pressed="false">▦ Retro Autumn</button></div></header>
 <section class="topcards" aria-label="Übersicht"><article class="card main"><div class="label">Ursprünglicher Unterhaltsrückstand</div><div class="number" id="startView">14.336,00 €</div><div class="label">Dein fester Ausgangspunkt</div></article><article class="card"><div class="label">Davon durch Einträge getilgt</div><div class="number sm olive" id="paidView">0,00 €</div><div class="muted">Nur erfasste Tilgungen</div></article><article class="card"><div class="label">Rechnerisch noch offen</div><div class="number sm rust" id="restView">14.336,00 €</div><div class="muted">Ohne ungebuchte Gebühren</div></article></section>
-<section class="section panel"><div class="progressHead"><h2 class="sectionTitle" style="margin:0">Dein Fortschritt</h2><strong id="percentView" style="color:#995332">0 %</strong></div><div class="progress" role="progressbar" aria-label="Tilgungsfortschritt" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressOuter"><div class="progressfill" id="progressFill"></div></div><div class="progressHead"><div class="muted" id="entryCount">0 Lohnzettel erfasst</div><div class="pill" id="nextGoal">Nächstes Ziel: unter 10.000 €</div></div></section>
+<section class="section panel"><div class="progressHead"><h2 class="sectionTitle" style="margin:0">Dein Fortschritt</h2><strong id="percentView" style="color:var(--accent)">0 %</strong></div><div class="progress" role="progressbar" aria-label="Tilgungsfortschritt" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressOuter"><div class="progressfill" id="progressFill"></div></div><div class="progressHead"><div class="muted" id="entryCount">0 Lohnzettel erfasst</div><div class="pill" id="nextGoal">Nächstes Ziel: unter 10.000 €</div></div></section>
 <section class="section panel"><div class="eyebrow">Rückwirkend & laufend</div><h2 class="sectionTitle" style="margin-top:8px">Lohnzettel eintragen</h2><div class="sub">Trage die exakten Zahlen deiner Abrechnung ein. Der Betrag für den laufenden Unterhalt kann in jedem Monat anders sein. Den Rest berechnet die App automatisch.</div><form id="paymentForm"><div class="formrow"><div class="field"><label for="month">Abrechnungsmonat</label><input type="month" id="month" required></div><div class="field"><label for="date">Pfändung / Auszahlung am</label><input type="date" id="date" required></div><div class="field"><label for="garnished">Insgesamt gepfändet (€)</label><input id="garnished" type="number" inputmode="decimal" min="0" step="0.01" required placeholder="z. B. 781,14"></div><div class="field"><label for="current">Davon laufender Unterhalt (€)</label><input id="current" type="number" inputmode="decimal" min="0" step="0.01" required value="394.00"></div><div class="field"><label for="towardsDebt">Davon alte Rückstände (€)</label><input id="towardsDebt" type="text" value="0,00 €" readonly aria-label="Automatisch berechnete Tilgung"></div><div class="field"><label for="note">Notiz (optional)</label><input id="note" maxlength="180" placeholder="z. B. September-Abrechnung"></div></div><div class="actions"><button type="submit" class="btn" id="submitBtn">+ Lohnzettel speichern</button><button type="button" class="btn secondary hidden" id="cancelEdit">Bearbeiten abbrechen</button></div><div class="tip">Beispiel: 781,14 € gepfändet – 394,00 € laufender Unterhalt = 387,14 € Tilgung alter Schulden. Falls laut Abrechnung noch andere Beträge enthalten sind, kannst du die Zuordnung später korrigieren. Neue Einträge werden <strong>nicht</strong> mit früher geschätzten 3.926 € verrechnet.</div></form></section>
 <section class="section panel"><div class="progressHead"><h2 class="sectionTitle">Deine Lohnabrechnungen</h2><div class="muted" id="totalGarnished"></div></div><div class="tablewrap"><table class="table"><thead><tr><th>Monat</th><th>Datum</th><th>Gepfändet</th><th>Laufend</th><th>Altschuld getilgt</th><th>Rest danach*</th><th>Notiz</th><th>Aktionen</th></tr></thead><tbody id="tbody"></tbody></table></div><div id="empty" class="empty">Noch keine Lohnzettel eingetragen. Starte einfach mit dem ältesten, den du vorliegen hast.</div><div class="muted" style="margin-top:10px">* Restschuld nach zeitlicher Reihenfolge aller eingetragenen Zahlungen, nicht nach Eingabereihenfolge.</div></section>
 <section class="section panel"><h2 class="sectionTitle">Deine Meilensteine</h2><div id="milestoneGrid" class="milestoneGrid"></div><div class="tip">Meilensteine werden anhand deiner tatsächlich eingetragenen Abrechnungen automatisch abgehakt.</div></section>
@@ -21,5 +81,19 @@ function calculate(rest,persist,average){const rate=average,ongoing=Math.round(N
 $('calcForecast').addEventListener('click',()=>{const s=read(),grouped=new Set(s.payments.map(p=>p.month));const paid=s.payments.reduce((v,p)=>v+p.garnished-p.current,0);calculate(Math.max(0,s.starting-paid),true,grouped.size?Math.round(paid/grouped.size):null)});
 // Watch only the summary label: the original app redraws it after each data mutation.
 const target=$('entryCount');new MutationObserver(refresh).observe(target,{childList:true,characterData:true,subtree:true});refresh();
+})();
+</script><script>
+(()=>{'use strict';
+const themeKey='tilgung-design-v1';
+const buttons=[...document.querySelectorAll('[data-choice]')];
+function setTheme(theme){
+  if(!['espresso','retro'].includes(theme))theme='espresso';
+  document.body.dataset.theme=theme;
+  buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.choice===theme)));
+  document.querySelector('meta[name="theme-color"]').content=theme==='espresso'?'#1b1513':'#f5ede1';
+  try{localStorage.setItem(themeKey,theme)}catch{}
+}
+let saved='espresso';try{saved=localStorage.getItem(themeKey)||saved}catch{}
+setTheme(saved);buttons.forEach(b=>b.addEventListener('click',()=>setTheme(b.dataset.choice)));
 })();
 </script></body></html>
