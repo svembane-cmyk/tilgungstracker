@@ -1,283 +1,145 @@
 <!doctype html>
-<html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#432b25"><title>Tilgung · Mein Rückstand</title><link rel="icon" type="image/png" href="./favicon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png"><link rel="manifest" href="./manifest.webmanifest"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Tilgung"><meta name="apple-mobile-web-app-status-bar-style" content="default"><style>
-:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;color:#372a22;background:#f4eee5;font-synthesis:none}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 8% 0%,#ead2b7,transparent 43%),#f4eee5;min-height:100vh}button,input,select{font:inherit}button{cursor:pointer}.shell{max-width:1100px;margin:auto;padding:32px 20px 65px}.mast{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:23px}.eyebrow{font-size:11px;letter-spacing:2.4px;font-weight:800;color:#986544;text-transform:uppercase}.brand{font-family:Georgia,serif;font-size:clamp(34px,5vw,51px);font-weight:600;margin:7px 0 4px;color:#4b2b22;letter-spacing:-1.8px}.sub{font-size:13px;color:#816f60;line-height:1.5}.season{color:#7d5039;background:#e9d9c6;border:1px solid #d3b99f;padding:10px 15px;border-radius:30px;font-size:12px;font-weight:700}.topcards{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:13px}.card,.panel{background:#fffaf2;border:1px solid #e5d4c0;border-radius:19px;padding:22px;box-shadow:0 8px 25px #5c3b2410}.card.main{background:#4b2d25;color:#ffedd9;border-color:#4b2d25}.card .label{font-size:12px;color:#846b5a}.card.main .label{color:#e9cab0}.number{font-size:clamp(23px,3.5vw,36px);letter-spacing:-1.2px;font-weight:800;margin:13px 0 6px;font-variant-numeric:tabular-nums}.number.sm{font-size:clamp(22px,3vw,31px)}.rust{color:#ad542f}.olive{color:#5b6a39}.card.main .number{color:#ffdcaa}.sectionTitle{font:600 24px Georgia,serif;color:#523528;margin:0 0 15px}.section{margin-top:23px}.progress{height:13px;background:#e6d8c7;border-radius:80px;overflow:hidden;margin:16px 0 8px}.progressfill{height:100%;width:0;background:linear-gradient(90deg,#9f532e,#c98750);border-radius:80px;transition:width .3s}.progressHead{display:flex;align-items:center;justify-content:space-between;gap:12px}.muted{color:#816f60;font-size:12px}.panel{padding:23px}.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}.field label{display:block;font-size:12px;color:#674c3c;font-weight:750;margin-bottom:7px}.field input,.field select{background:#fffcf6;border:1px solid #d9c5af;color:#3c2b22;padding:12px 13px;border-radius:11px;width:100%;min-width:0;outline:none}.field input:focus,.field select:focus{border-color:#9a572e;box-shadow:0 0 0 3px #bd815b26}.formrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-top:17px}.formrow .wide{grid-column:span 2}.actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:18px}.btn{border:1px solid #a85c36;color:#fffaf4;background:#a85c36;border-radius:11px;font-weight:750;padding:12px 17px}.btn:hover{filter:brightness(.95)}.btn.secondary{background:#f7ede1;color:#68402c;border-color:#d5bda5}.btn.danger{background:#fff2ef;color:#923d2b;border-color:#e4b1a3}.tip{border-left:3px solid #af7846;background:#f8efdf;padding:10px 13px;font-size:12px;color:#725743;line-height:1.6;border-radius:0 8px 8px 0;margin-top:14px}.tablewrap{overflow:auto}.table{border-collapse:collapse;width:100%;min-width:760px;text-align:left}.table th{text-transform:uppercase;letter-spacing:1px;color:#806c5b;font-size:10px;white-space:nowrap}.table th,.table td{padding:13px 9px;border-bottom:1px solid #ecdecd}.table td{font-size:12px;color:#47372d}.table td.money{font-weight:750;white-space:nowrap}.table td.noteCell{max-width:190px;overflow-wrap:anywhere}.table .negative{color:#a34c2c}.table .positive{color:#5d7041}.empty{text-align:center;padding:24px;color:#7b6857;font-size:13px}.smallBtn{border:1px solid #dac5b0;border-radius:9px;background:#f5ede2;color:#6d4430;font-size:12px;padding:7px 10px}.foot{font-size:11px;line-height:1.65;color:#8c7867;margin:22px 0}.settings{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:end}.settings .field{max-width:300px}.pill{display:inline-block;border-radius:20px;background:#e2e6d7;color:#495b2f;padding:7px 11px;font-size:11px;font-weight:700}.hidden{display:none!important}@media(max-width:730px){.shell{padding:23px 13px 45px}.mast{align-items:flex-start}.season{display:none}.topcards{grid-template-columns:1fr 1fr}.card.main{grid-column:1/-1}.number{font-size:27px}.card{padding:16px}.panel{padding:17px}.formrow{grid-template-columns:1fr 1fr}.formrow .wide{grid-column:1/-1}.settings{grid-template-columns:1fr}.grid{grid-template-columns:1fr}}@media(max-width:425px){.formrow{grid-template-columns:1fr}.formrow .wide{grid-column:auto}.topcards{gap:9px}.number.sm{font-size:21px}.card .label{font-size:11px}}
-.milestoneGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.milestone{background:#f6ecdf;border:1px solid #e6d4bf;padding:12px 14px;border-radius:11px;font-size:13px;color:#795c46}.milestone.done{background:#e8ecdd;color:#506337;border-color:#ced8b8}@media(max-width:550px){.milestoneGrid{grid-template-columns:1fr}}
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#9f4e2f">
+  <meta name="description" content="Dein persönlicher Tilgungstracker mit Lohnabrechnungen, Diagramm und vier Designs.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Tilgung">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Tilgung. · Mein Rückstand</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/png" href="./favicon-32.png">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body data-theme="retro">
+  <svg xmlns="http://www.w3.org/2000/svg" class="icon-defs" aria-hidden="true"><defs>
+    <symbol id="ic-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8v9a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="ic-receipt" viewBox="0 0 24 24"><path d="M5 3h14v18l-3-2-4 2-4-2-3 2zM8 8h8M8 12h8M8 16h4"/></symbol>
+    <symbol id="ic-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20v-5"/></symbol>
+    <symbol id="ic-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></symbol>
+    <symbol id="ic-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+    <symbol id="ic-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+    <symbol id="ic-gear" viewBox="0 0 24 24"><path d="M10 2h4l.7 2.5 2 .8 2.3-1.3 2.8 2.8-1.3 2.3.8 2 2.5.9v4l-2.5.7-.8 2 1.3 2.3-2.8 2.8-2.3-1.3-2 .8L14 23h-4l-.7-2.5-2-.8L5 21 2.2 18.2l1.3-2.3-.8-2L.2 13v-3l2.5-.7.8-2L2.2 5 5 2.2l2.3 1.3 2-.8z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="ic-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+    <symbol id="ic-back" viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></symbol>
+    <symbol id="ic-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M7 14h3M14 14h3"/></symbol>
+    <symbol id="ic-check" viewBox="0 0 24 24"><path d="m4 12 5 5 11-11"/></symbol>
+    <symbol id="ic-down" viewBox="0 0 24 24"><path d="M12 3v15m-6-6 6 6 6-6M4 21h16"/></symbol>
+    <symbol id="ic-upload" viewBox="0 0 24 24"><path d="M12 21V6m-6 6 6-6 6 6M4 3h16"/></symbol>
+    <symbol id="ic-edit" viewBox="0 0 24 24"><path d="m4 17-.5 3.5L7 20l12-12-3-3zM14 7l3 3"/></symbol>
+    <symbol id="ic-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 4h6M7 7l1 13h8l1-13M10 10v7M14 10v7"/></symbol>
+    <symbol id="ic-palette" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18h2c3 0 3-3 1-4s-1-3 1-3h3c2 0 2-2 2-3a9 9 0 0 0-9-8z"/><circle cx="7" cy="11" r="1"/><circle cx="11" cy="7" r="1"/><circle cx="16" cy="8" r="1"/></symbol>
+  </defs></svg>
+  <div class="app" id="app">
+    <header class="app-header">
+      <div class="brandlock"><span class="appmark"><img src="./icon-192.png" alt="" /></span><div><p class="overline" id="headerKicker">MEIN SCHULDENÜBERBLICK</p><h1>Tilgung<span class="dot">.</span></h1></div></div>
+      <button class="round-action" type="button" data-go="more" aria-label="Einstellungen und Designs öffnen"><svg class="ico"><use href="#ic-gear"/></svg></button>
+    </header>
 
-/* Zwei vollständige, lokal gespeicherte Designwelten */
-body[data-theme="espresso"] {
-  --bg:#1b1513; --surface:#302521; --surface2:#382a24; --ink:#f7e8d7;
-  --muted:#c3a998; --border:#584136; --hero:#5b382a; --accent:#dca875;
-  --accentInk:#24170f; --soft:#3d3028; --tag:#443b2d; --olive:#b9c392;
-  --rust:#e2a16f; --table:#f2e5d7; --shadow:#00000035;
-}
-body[data-theme="retro"] {
-  --bg:#f5ede1; --surface:#fff9ef; --surface2:#fff8e9; --ink:#3d2a22;
-  --muted:#7b6253; --border:#d6bfa7; --hero:#603b2f; --accent:#b95c35;
-  --accentInk:#fff9ed; --soft:#f4e5cf; --tag:#e8e6d6; --olive:#586638;
-  --rust:#aa4e2e; --table:#46352c; --shadow:#70452a18;
-}
-body[data-theme] {background:var(--bg);color:var(--ink);transition:background .2s,color .2s}
-body[data-theme="espresso"] {background:radial-gradient(ellipse at 80% 0%,#634335 0%,transparent 47%),var(--bg)}
-body[data-theme="retro"] {background:radial-gradient(ellipse at 7% 0%,#e7c6a5,transparent 45%),var(--bg)}
-body[data-theme] .card,body[data-theme] .panel {background:var(--surface);color:var(--ink);border-color:var(--border);box-shadow:0 12px 26px var(--shadow)}
-body[data-theme] .card.main {background:var(--hero);border-color:var(--hero)}
-body[data-theme] .card.main .number {color:#ffe0b4}
-body[data-theme] .card.main .label {color:#e8c9a7}
-body[data-theme] .brand,body[data-theme] .sectionTitle {color:var(--ink)}
-body[data-theme] .eyebrow {color:var(--accent)}
-body[data-theme] .sub,body[data-theme] .muted,body[data-theme] .card .label,body[data-theme] .foot {color:var(--muted)}
-body[data-theme] .rust {color:var(--rust)}
-body[data-theme] .olive {color:var(--olive)}
-body[data-theme] .progress {background:var(--soft)}
-body[data-theme] .progressfill {background:linear-gradient(90deg,var(--accent),#f0c394)}
-body[data-theme] .field label {color:var(--ink)}
-body[data-theme] .field input,body[data-theme] .field select {background:var(--surface2);color:var(--ink);border-color:var(--border)}
-body[data-theme] .field input:focus {border-color:var(--accent);box-shadow:0 0 0 3px #b97a4f44}
-body[data-theme] .btn {background:var(--accent);color:var(--accentInk);border-color:var(--accent)}
-body[data-theme] .btn.secondary,body[data-theme] .smallBtn {background:var(--soft);color:var(--ink);border-color:var(--border)}
-body[data-theme] .btn.danger {background:var(--soft);color:var(--rust);border-color:var(--border)}
-body[data-theme] .tip {background:var(--soft);color:var(--ink);border-left-color:var(--accent)}
-body[data-theme] .table th {color:var(--muted)}
-body[data-theme] .table td {color:var(--table);border-bottom-color:var(--border)}
-body[data-theme] .table th {border-bottom-color:var(--border)}
-body[data-theme] .table .positive {color:var(--olive)}
-body[data-theme] .empty {color:var(--muted)}
-body[data-theme] .milestone {background:var(--soft);border-color:var(--border);color:var(--ink)}
-body[data-theme] .milestone.done {background:var(--tag);color:var(--olive);border-color:var(--border)}
-body[data-theme] .pill {background:var(--tag);color:var(--olive)}
-.theme-picker{display:flex;gap:5px;padding:5px;border:1px solid var(--border);border-radius:15px;background:var(--surface);align-self:center}
-.theme-choice{background:transparent;color:var(--muted);border:0;padding:10px 13px;border-radius:10px;font-size:12px;font-weight:800;line-height:1.1}
-.theme-choice[aria-pressed="true"]{background:var(--accent);color:var(--accentInk)}
-.theme-choice:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-body[data-theme] .topcards .card{position:relative;overflow:hidden;min-height:154px}
-body[data-theme] .card.main:after{content:"";position:absolute;right:-29px;bottom:-66px;width:190px;height:190px;border-radius:50%;border:28px solid #ffffff11;pointer-events:none}
-body[data-theme] .topcards .card:not(.main):before{content:"";display:block;height:4px;width:38px;border-radius:4px;background:var(--accent);margin-bottom:11px}
-body[data-theme] .panel{border-radius:23px}
-body[data-theme] .number {letter-spacing:-1.3px}
-body[data-theme] .sectionTitle {letter-spacing:-.5px}
-body[data-theme="retro"] .card.main {background-color:#a94e2e;background-image:linear-gradient(90deg,#ffffff0d 50%,transparent 50%),linear-gradient(#ffffff0d 50%,transparent 50%);background-size:46px 46px}
-body[data-theme="retro"] .mast:before{content:"";display:block;position:absolute;top:0;left:0;right:0;height:10px;background:repeating-conic-gradient(#4b3026 0% 25%,#f6e9d5 0% 50%) 0 0 / 30px 30px}
-body[data-theme="retro"] .sectionTitle{font-family:Georgia,serif}
-body[data-theme="espresso"] .sectionTitle {font-family:Georgia,serif;font-weight:500}
-body[data-theme="espresso"] .progressfill{background:linear-gradient(90deg,#986242,#e9b77f)}
-.design-note{font-size:11px;color:var(--muted);margin-top:8px}
-@media(max-width:750px){.mast{flex-wrap:wrap}.theme-picker{width:100%}.theme-choice{flex:1}.season{display:none}}
+    <main id="main" tabindex="-1">
+      <section class="view active" id="view-home" aria-labelledby="home-title">
+        <div class="hero">
+          <div class="checker-ribbon" aria-hidden="true"></div>
+          <div class="hero-decoration decoration-one" aria-hidden="true"></div><div class="hero-decoration decoration-two" aria-hidden="true"></div><div class="hero-art" aria-hidden="true"></div>
+          <div class="hero-top"><p class="hero-kicker" id="home-title">DEIN WEG IN KLEINEN SCHRITTEN</p><span class="hero-sparkle" aria-hidden="true">✦</span></div>
+          <h2 class="hero-name">Dein Rückstand<span>.</span></h2>
+          <div class="hero-body">
+            <div class="hero-amount"><span class="micro-label">NOCH OFFEN</span><strong class="debt-amount" id="heroRemaining">14.336,00 €</strong><span class="hero-caption">von <strong id="heroStarting">14.336,00 €</strong> ursprünglich</span></div>
+            <div class="ring" id="progressRing" role="progressbar" aria-label="Tilgungsfortschritt" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div class="ring-core"><strong id="ringPercent">0 %</strong><span>getilgt</span></div>
+            </div>
+          </div>
+          <div class="hero-bottom"><span class="hero-dot" aria-hidden="true"></span><span id="heroInfo">Deine erste Lohnabrechnung wartet</span></div>
+        </div>
 
-/* === Retro Autumn redesign === */
-:root{--ra-bg:#efe3d3;--ra-paper:#fff8ef;--ra-paper-2:#f8ecdb;--ra-ink:#3a2923;--ra-muted:#7c6455;--ra-border:#dbc0a7;--ra-hero:#a55133;--ra-hero-deep:#7b3925;--ra-accent:#b95c35;--ra-accent-soft:#edd0b7;--ra-olive:#697445;--ra-olive-soft:#e3ead5;--ra-rust:#98492b;--ra-shadow:rgba(74,42,27,.12);--ra-shadow-strong:rgba(74,42,27,.16)}
-body[data-theme="retro"]{background:radial-gradient(circle at 12% 0%,#e9cfb0 0,transparent 25%),radial-gradient(circle at 100% 20%,#f4e7d8 0,transparent 35%),linear-gradient(180deg,#f4e8d8 0%,#efe3d3 100%);color:var(--ra-ink)}
-body[data-theme="retro"] .shell{max-width:1180px;padding:34px 18px 74px}
-body[data-theme="retro"] .mast{position:relative;align-items:center;margin-bottom:22px;padding:24px 26px;border:1px solid var(--ra-border);border-radius:30px;background:linear-gradient(180deg,rgba(255,248,239,.88),rgba(250,240,226,.95));box-shadow:0 20px 50px var(--ra-shadow)}
-body[data-theme="retro"] .mast:before{content:"";position:absolute;inset:0 auto auto 0;width:100%;height:13px;border-radius:30px 30px 0 0;background:repeating-conic-gradient(from 45deg,#4f3429 0 25%,#f5e8d4 0 50%) 0 0/34px 34px;opacity:.9}
-body[data-theme="retro"] .mast-copy{padding-top:10px;max-width:760px}
-body[data-theme="retro"] .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:2.8px;color:var(--ra-rust);background:#fff2e3;border:1px solid var(--ra-border);padding:8px 11px;border-radius:999px}
-body[data-theme="retro"] .brand{font-family:Georgia,serif;font-size:clamp(38px,6vw,60px);line-height:.95;color:#482d24;margin:14px 0 10px;text-shadow:0 1px 0 #fff7ee}
-body[data-theme="retro"] .sub{font-size:14px;max-width:700px;color:var(--ra-muted)}
-body[data-theme="retro"] .season-badge{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:18px;background:#fff7ed;border:1px solid var(--ra-border);color:#5a4136;font-weight:700;box-shadow:0 8px 20px rgba(74,42,27,.08)}
-body[data-theme="retro"] .season-dot{width:11px;height:11px;border-radius:50%;background:linear-gradient(180deg,#c76b42,#8f4528);box-shadow:0 0 0 5px #f2deca}
-body[data-theme="retro"] .topcards{grid-template-columns:1.25fr .9fr .9fr;gap:16px}
-body[data-theme="retro"] .card,body[data-theme="retro"] .panel{background:linear-gradient(180deg,var(--ra-paper),#fffdfa);border:1px solid var(--ra-border);border-radius:26px;box-shadow:0 14px 35px var(--ra-shadow);padding:24px}
-body[data-theme="retro"] .card{position:relative;overflow:hidden}
-body[data-theme="retro"] .card:after{content:"";position:absolute;right:-28px;top:-28px;width:118px;height:118px;border-radius:50%;background:radial-gradient(circle,#efd4bf 0,rgba(239,212,191,.35) 55%,transparent 56%)}
-body[data-theme="retro"] .card.main{background:linear-gradient(135deg,var(--ra-hero) 0%,var(--ra-hero-deep) 100%);border-color:#904829;color:#fff7ef;box-shadow:0 18px 38px rgba(123,57,37,.28)}
-body[data-theme="retro"] .card.main:before{content:"";position:absolute;inset:auto 18px 18px auto;width:112px;height:112px;border:18px solid rgba(255,255,255,.11);border-radius:50%}
-body[data-theme="retro"] .card.main:after{background:repeating-conic-gradient(from 45deg,rgba(255,255,255,.12) 0 25%,transparent 0 50%) 0 0/24px 24px;right:-16px;top:auto;bottom:-12px;width:160px;height:88px;border-radius:20px;opacity:.6}
-body[data-theme="retro"] .card .label{font-size:12px;color:var(--ra-muted);font-weight:700;letter-spacing:.2px;text-transform:none}
-body[data-theme="retro"] .card.main .label{color:#f6dbc7}
-body[data-theme="retro"] .number{font-size:clamp(26px,4vw,40px);font-weight:800;letter-spacing:-1.6px;margin:16px 0 8px}
-body[data-theme="retro"] .number.sm{font-size:clamp(24px,3.5vw,33px)}
-body[data-theme="retro"] .olive{color:var(--ra-olive)!important}
-body[data-theme="retro"] .rust{color:var(--ra-rust)!important}
-body[data-theme="retro"] .section{margin-top:18px}
-body[data-theme="retro"] .panel{position:relative;overflow:hidden}
-body[data-theme="retro"] .panel:before{content:"";position:absolute;right:0;top:0;width:84px;height:84px;background:radial-gradient(circle at 35% 35%,#f7e5d4 0 30%,transparent 31%);opacity:.85;pointer-events:none}
-body[data-theme="retro"] .sectionTitle{font-family:Georgia,serif;font-size:clamp(25px,3vw,32px);font-weight:600;letter-spacing:-.6px;color:#4b2e24;margin:0 0 6px}
-body[data-theme="retro"] .muted,body[data-theme="retro"] .foot{color:var(--ra-muted)}
-body[data-theme="retro"] .progressHead{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
-body[data-theme="retro"] .progress{height:18px;border-radius:999px;background:#ead8c4;overflow:hidden;border:1px solid #ddc0a2;margin:18px 0 10px;box-shadow:inset 0 2px 6px rgba(91,57,39,.08)}
-body[data-theme="retro"] .progressfill{height:100%;border-radius:inherit;background:linear-gradient(90deg,#9b4f32 0%,#bf6a40 55%,#e0ab77 100%);box-shadow:inset 0 -2px 0 rgba(255,255,255,.18)}
-body[data-theme="retro"] .pill{background:#f3e4d2;border:1px solid var(--ra-border);color:#5f483d;border-radius:999px;padding:10px 14px;font-weight:700}
-body[data-theme="retro"] .tip{background:#f8eee2;border-left:4px solid var(--ra-accent);color:#513a31;border-radius:16px;padding:14px 16px}
-body[data-theme="retro"] .formrow,.settings,.actions{display:grid;gap:14px}
-body[data-theme="retro"] .formrow{grid-template-columns:repeat(2,minmax(0,1fr))}
-body[data-theme="retro"] .actions{grid-template-columns:repeat(auto-fit,minmax(190px,1fr));margin-top:18px}
-body[data-theme="retro"] .field label{font-size:12px;font-weight:800;color:#5b4438;display:block;margin-bottom:8px;letter-spacing:.15px}
-body[data-theme="retro"] .field input,body[data-theme="retro"] .field select{width:100%;padding:14px 15px;border:1px solid var(--ra-border);border-radius:16px;background:#fffaf3;color:#3b2a23;box-shadow:0 1px 0 rgba(255,255,255,.8) inset;transition:border-color .18s, box-shadow .18s, transform .18s}
-body[data-theme="retro"] .field input:focus,body[data-theme="retro"] .field select:focus{outline:none;border-color:#bf6a40;box-shadow:0 0 0 4px rgba(185,92,53,.16);transform:translateY(-1px)}
-body[data-theme="retro"] .btn,body[data-theme="retro"] .smallBtn{appearance:none;border:1px solid transparent;border-radius:16px;padding:13px 16px;font-weight:800;letter-spacing:.1px;box-shadow:0 8px 16px rgba(123,57,37,.12);transition:transform .16s, box-shadow .16s, background .16s, color .16s}
-body[data-theme="retro"] .btn:hover,body[data-theme="retro"] .smallBtn:hover{transform:translateY(-1px);box-shadow:0 10px 22px rgba(123,57,37,.16)}
-body[data-theme="retro"] .btn{background:linear-gradient(180deg,#c4683f,#ab5734);color:#fffaf2}
-body[data-theme="retro"] .btn.secondary,body[data-theme="retro"] .smallBtn{background:#fff4e7;border-color:var(--ra-border);color:#4b342a}
-body[data-theme="retro"] .btn.danger{background:#fff1ec;border-color:#e2bda9;color:#914a2d}
-body[data-theme="retro"] .tablewrap{overflow:auto;border:1px solid var(--ra-border);border-radius:20px;background:#fffdf8;margin-top:14px}
-body[data-theme="retro"] .table{width:100%;min-width:780px;border-collapse:separate;border-spacing:0}
-body[data-theme="retro"] .table th{position:sticky;top:0;background:#faefe2;color:#7a5f51;font-size:11px;text-transform:uppercase;letter-spacing:1px;padding:14px 12px;border-bottom:1px solid var(--ra-border)}
-body[data-theme="retro"] .table td{padding:14px 12px;color:#433029;border-bottom:1px solid #efe2d2;vertical-align:top}
-body[data-theme="retro"] .table tbody tr:nth-child(even){background:#fffbf5}
-body[data-theme="retro"] .table tbody tr:hover{background:#f9f0e5}
-body[data-theme="retro"] .empty{padding:30px;color:var(--ra-muted)}
-body[data-theme="retro"] .milestoneGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
-body[data-theme="retro"] .milestone{display:flex;align-items:flex-start;gap:12px;padding:16px;border-radius:18px;background:#fffaF4;border:1px solid var(--ra-border)}
-body[data-theme="retro"] .milestone.done{background:#f1f5ea;border-color:#d3ddbe}
-body[data-theme="retro"] .milestone strong{display:block;color:#4a3128}
-body[data-theme="retro"] .milestone small{display:block;color:var(--ra-muted);margin-top:4px}
-body[data-theme="retro"] .forecastCards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:14px}
-body[data-theme="retro"] .forecastCard{background:#fff9f1;border:1px solid var(--ra-border);border-radius:20px;padding:20px}
-body[data-theme="retro"] .forecastCard .number{margin-top:8px;font-size:30px}
-body[data-theme="retro"] .settings{grid-template-columns:minmax(220px,340px) auto;align-items:end}
-body[data-theme="retro"] .foot{margin-top:18px;font-size:12px;line-height:1.5}
-@media(max-width:920px){body[data-theme="retro"] .topcards{grid-template-columns:1fr}body[data-theme="retro"] .settings{grid-template-columns:1fr}body[data-theme="retro"] .forecastCards{grid-template-columns:1fr 1fr}}
-@media(max-width:700px){body[data-theme="retro"] .shell{padding:22px 14px 52px}body[data-theme="retro"] .mast{padding:18px 18px 20px;border-radius:24px}body[data-theme="retro"] .season-badge{width:100%;justify-content:center}body[data-theme="retro"] .formrow,body[data-theme="retro"] .forecastCards{grid-template-columns:1fr}body[data-theme="retro"] .panel,.card{padding:18px}body[data-theme="retro"] .number{font-size:30px}body[data-theme="retro"] .table{min-width:700px}}
+        <div class="quick-stats">
+          <div class="quick-stat"><span class="stat-icon">✓</span><div><span class="mini-label">Bereits getilgt</span><strong id="homePaid">0,00 €</strong></div></div>
+          <div class="stat-divider"></div>
+          <div class="quick-stat"><span class="stat-icon bars">▂▅▇</span><div><span class="mini-label">Ø Tilgung / Monat</span><strong id="homeAverage">Noch keine Daten</strong></div></div>
+        </div>
 
+        <button class="next-payment" type="button" data-go="payments" data-focus="form">
+          <div class="next-icon"><svg class="ico"><use href="#ic-calendar"/></svg></div>
+          <div class="next-copy"><span class="mini-label">DEINE LOHNABRECHNUNGEN</span><strong id="nextLabel">Ersten Lohnzettel erfassen</strong><small id="nextDescription">Auch vergangene Monate eintragen</small></div>
+          <svg class="ico next-arrow"><use href="#ic-chevron"/></svg>
+        </button>
 
-/* === Fluid refinement: softer, less blocky === */
-body[data-theme="retro"]{background:
-  radial-gradient(circle at 12% 0%, rgba(233,207,176,.75) 0, transparent 24%),
-  radial-gradient(circle at 88% 12%, rgba(249,235,214,.95) 0, transparent 28%),
-  radial-gradient(circle at 50% 100%, rgba(232,205,177,.45) 0, transparent 35%),
-  linear-gradient(180deg,#f6ecdf 0%, #efe1d0 100%)}
-body[data-theme="retro"] .shell{padding-top:26px}
-body[data-theme="retro"] .mast{border-radius:34px 34px 46px 46px; padding:28px 28px 26px; overflow:hidden}
-body[data-theme="retro"] .mast:after{content:""; position:absolute; inset:auto -60px -70px auto; width:240px; height:180px; background:radial-gradient(circle at 30% 30%, rgba(255,255,255,.35) 0, rgba(255,255,255,.15) 35%, transparent 36%); transform:rotate(-10deg); pointer-events:none}
-body[data-theme="retro"] .season-badge{border-radius:999px 999px 999px 999px; padding:13px 18px}
-body[data-theme="retro"] .topcards{gap:18px}
-body[data-theme="retro"] .card, body[data-theme="retro"] .panel{border-radius:30px; box-shadow:0 18px 40px var(--ra-shadow), inset 0 1px 0 rgba(255,255,255,.78)}
-body[data-theme="retro"] .card{padding:26px 24px 24px}
-body[data-theme="retro"] .card:nth-child(2){border-radius:34px 28px 34px 44px}
-body[data-theme="retro"] .card:nth-child(3){border-radius:28px 38px 42px 30px}
-body[data-theme="retro"] .card.main{border-radius:34px 34px 54px 34px; padding:28px 26px; position:relative}
-body[data-theme="retro"] .card.main:before{width:126px; height:126px; border-width:20px; right:18px; bottom:12px}
-body[data-theme="retro"] .card.main:after{right:-10px; bottom:-8px; width:170px; height:94px; border-radius:26px}
-body[data-theme="retro"] .panel{padding:24px 24px 22px}
-body[data-theme="retro"] .panel:before{right:-8px; top:-8px; width:120px; height:120px; opacity:.65}
-body[data-theme="retro"] .section{position:relative}
-body[data-theme="retro"] .section + .section{margin-top:20px}
-body[data-theme="retro"] .section.panel:nth-of-type(odd){border-radius:30px 42px 34px 38px}
-body[data-theme="retro"] .section.panel:nth-of-type(even){border-radius:40px 30px 42px 34px}
-body[data-theme="retro"] .progress{height:20px; border-radius:999px; overflow:hidden}
-body[data-theme="retro"] .progressfill{border-radius:999px; position:relative}
-body[data-theme="retro"] .progressfill:after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(255,255,255,.22), transparent 60%)}
-body[data-theme="retro"] .pill{border-radius:999px; padding:11px 16px}
-body[data-theme="retro"] .tip{border-radius:20px 26px 20px 26px; padding:15px 17px}
-body[data-theme="retro"] .field input, body[data-theme="retro"] .field select{border-radius:18px; padding:14px 16px}
-body[data-theme="retro"] .btn, body[data-theme="retro"] .smallBtn{border-radius:18px}
-body[data-theme="retro"] .tablewrap{border-radius:24px; overflow:hidden}
-body[data-theme="retro"] .table tbody tr:first-child td:first-child{border-top-left-radius:16px}
-body[data-theme="retro"] .table tbody tr:last-child td:last-child{border-bottom-right-radius:16px}
-body[data-theme="retro"] .milestoneGrid{gap:14px}
-body[data-theme="retro"] .milestone{border-radius:22px 28px 22px 28px; padding:17px 16px}
-body[data-theme="retro"] .forecastCard{border-radius:24px 30px 24px 30px; box-shadow:0 12px 26px rgba(74,42,27,.08)}
-body[data-theme="retro"] .settings{gap:16px}
-body[data-theme="retro"] .actions{gap:12px}
-body[data-theme="retro"] .table th, body[data-theme="retro"] .table td{padding-top:15px; padding-bottom:15px}
-body[data-theme="retro"] .curve-divider{height:22px; margin:8px 0 2px; position:relative}
-body[data-theme="retro"] .curve-divider:before{content:""; position:absolute; inset:0; background:radial-gradient(60px 20px at 10% 100%, transparent 98%, rgba(185,92,53,.14) 100%), radial-gradient(70px 18px at 34% 100%, transparent 98%, rgba(105,116,69,.12) 100%), radial-gradient(62px 20px at 58% 100%, transparent 98%, rgba(185,92,53,.12) 100%), radial-gradient(64px 20px at 82% 100%, transparent 98%, rgba(105,116,69,.12) 100%)}
-@media (max-width:700px){
- body[data-theme="retro"] .mast{border-radius:28px 28px 38px 38px}
- body[data-theme="retro"] .card, body[data-theme="retro"] .panel{border-radius:26px}
- body[data-theme="retro"] .section.panel:nth-of-type(odd), body[data-theme="retro"] .section.panel:nth-of-type(even){border-radius:28px 32px 30px 34px}
- body[data-theme="retro"] .card.main{border-radius:28px 28px 42px 28px}
-}
+        <div class="chart-section">
+          <div class="section-heading"><div><p class="overline">DEIN FORTSCHRITT</p><h2>Tilgungsverlauf</h2></div><button class="text-link" type="button" data-go="stats">Details <span aria-hidden="true">↗</span></button></div>
+          <div class="chart-plate">
+            <div class="chart-topline"><span><i class="legend-dot"></i>Restschuld</span><span class="chart-period" id="chartPeriod">Dein Verlauf</span></div>
+            <div id="homeChart" class="chart-box" role="img" aria-label="Tilgungsverlauf – noch keine Abrechnungen erfasst"></div>
+            <p class="chart-footnote" id="chartNote">Dein Diagramm füllt sich mit jeder erfassten Lohnabrechnung.</p>
+          </div>
+        </div>
+        <div class="small-encouragement"><span aria-hidden="true">✳</span> Jeder eingetragene Betrag macht deinen Weg sichtbar.</div>
+      </section>
 
+      <section class="view" id="view-payments" aria-labelledby="payment-heading" hidden>
+        <div class="page-heading"><p class="overline">DEIN MONAT FÜR MONAT</p><h2 id="payment-heading">Lohnabrechnungen<span class="dot">.</span></h2><p>Trage deine tatsächlichen Beträge ein – auch rückwirkend. Die App berechnet die Tilgung aus jedem Lohnzettel.</p></div>
+        <div class="slim-summary"><div><span>Ursprüngliche Schuld</span><strong id="paymentStarting">14.336,00 €</strong></div><div><span>Rechnerisch offen</span><strong id="paymentRemaining">14.336,00 €</strong></div></div>
+        <div class="sheet-surface" id="formAnchor"><div class="section-heading compact"><h3 id="formTitle">Lohnzettel hinzufügen</h3><span class="mini-accent">✳ EXAKTE BETRÄGE</span></div>
+          <form id="paymentForm" novalidate>
+            <div class="fields two"><label>Abrechnungsmonat<input type="month" id="month" required></label><label>Datum der Pfändung<input type="date" id="date" required></label></div>
+            <div class="fields two"><label>Insgesamt gepfändet (€)<input type="number" id="garnished" min="0" step="0.01" inputmode="decimal" placeholder="z. B. 781,14" required></label><label>Davon laufender Unterhalt (€)<input type="number" id="current" min="0" step="0.01" inputmode="decimal" placeholder="Betrag laut Abrechnung" required></label></div>
+            <div class="derived-row"><span>Für den alten Rückstand berechnet</span><strong id="calculatedDebt">–</strong></div>
+            <label class="block-label">Notiz (optional)<input type="text" id="note" maxlength="150" placeholder="z. B. Lohnabrechnung September"></label>
+            <p class="helper">Nur die Differenz wird als Tilgung angerechnet. Falls die tatsächliche Verrechnung abweicht, kannst du den laufenden Anteil entsprechend eintragen.</p>
+            <div class="form-actions"><button class="btn primary" type="submit" id="savePayment"><svg class="ico"><use href="#ic-plus"/></svg> Lohnzettel speichern</button><button class="btn subtle" id="cancelEdit" type="button" hidden>Abbrechen</button></div>
+          </form>
+        </div>
+        <div class="section-heading spaced"><div><p class="overline">DEINE EINTRÄGE</p><h3>Erfasste Lohnzettel <span class="count-chip" id="paymentCount">0</span></h3></div></div>
+        <div class="list" id="paymentList"><div class="empty-panel">Noch keine Lohnzettel eingetragen.</div></div>
+      </section>
 
-/* Four distinct visual systems. Data and computation use a separate storage key. */
-.design-bar{margin:0 0 23px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:18px 22px;border:1px solid #dbc0a7;border-radius:24px;background:#fffbf4e8;box-shadow:0 9px 25px #58382212}
-.design-bar-heading{display:flex;flex-direction:column;gap:4px;color:#443027}
-.design-bar-heading span{font-size:10px;font-weight:900;letter-spacing:2px;opacity:.65}
-.design-bar-heading strong{font-size:15px;font-weight:750}
-.design-options{display:flex;flex-wrap:wrap;gap:9px}
-.design-option{display:flex;align-items:center;gap:8px;background:#ffffff8a;color:#574036;border:1px solid #d9c5b1;padding:8px 12px 8px 8px;border-radius:999px;font-size:12px;font-weight:800;transition:background .2s,box-shadow .2s,transform .2s}
-.design-option:hover{transform:translateY(-1px)}.design-option[aria-pressed=true]{background:#4f3228;color:#fff4e6;border-color:#4f3228;box-shadow:0 4px 14px #51302130}
-.design-option:focus-visible{outline:3px solid #bf754d;outline-offset:3px}
-.swatch{display:inline-block;width:24px;height:24px;border-radius:50%;border:2px solid #fff8;flex:0 0 auto}
-.retro-swatch{background:conic-gradient(#462920 0 25%,#f7dfc5 0 50%,#ae5a36 0 75%,#f7dfc5 0)}
-.espresso-swatch{background:linear-gradient(135deg,#211713 45%,#b87846 45% 70%,#e3b888 70%)}
-.feminine-swatch{background:linear-gradient(135deg,#f3c6c3 20%,#a24d59 20% 68%,#f6e6dd 68%)}
-.clean-swatch{background:linear-gradient(135deg,#f5efe5 38%,#74816c 38% 70%,#c1aa91 70%)}
-body[data-design] .theme-picker{display:none}
-/* Espresso: rich dark surfaces, warm amber typography */
-body[data-design="espresso"]{background:radial-gradient(circle at 90% 0%,#553828,transparent 36%),linear-gradient(160deg,#201714,#30211c);color:#f4e5d7}
-body[data-design="espresso"] .mast,body[data-design="espresso"] .design-bar,body[data-design="espresso"] .panel,body[data-design="espresso"] .card:not(.main){background:linear-gradient(145deg,#332721,#291d19);border-color:#61483a;box-shadow:0 16px 33px #100b0980;color:#f7e3d4}
-body[data-design="espresso"] .brand,body[data-design="espresso"] .sectionTitle,body[data-design="espresso"] .design-bar-heading,body[data-design="espresso"] .milestone strong{color:#ffe6c9}
-body[data-design="espresso"] .sub,body[data-design="espresso"] .muted,body[data-design="espresso"] .foot,body[data-design="espresso"] .card .label{color:#cfb3a2}
-body[data-design="espresso"] .eyebrow,body[data-design="espresso"] .season-badge{background:#4e3528;color:#ecc9a6;border-color:#825741}
-body[data-design="espresso"] .card.main{background:linear-gradient(135deg,#815035,#513020);border-color:#b1774c}
-body[data-design="espresso"] .number,body[data-design="espresso"] .card .number{color:#f1c699}
-body[data-design="espresso"] .card .olive{color:#c4cda0!important}body[data-design="espresso"] .card .rust{color:#eda779!important}
-body[data-design="espresso"] .progress{background:#473228;border-color:#705441}body[data-design="espresso"] .progressfill{background:linear-gradient(90deg,#b77b50,#e5bd86)}
-body[data-design="espresso"] .pill,body[data-design="espresso"] .tip,body[data-design="espresso"] .milestone,body[data-design="espresso"] .forecastCard{background:#433127;color:#f7e5d4;border-color:#6e5040}
-body[data-design="espresso"] .milestone.done{background:#354235;border-color:#5d7859}body[data-design="espresso"] .milestone small{color:#c9af9b}
-body[data-design="espresso"] .field label{color:#f0ceb0}body[data-design="espresso"] .field input,body[data-design="espresso"] .field select{background:#261b18;color:#fff2e5;border-color:#745342;color-scheme:dark}
-body[data-design="espresso"] .btn{background:linear-gradient(160deg,#e6ae74,#be7b48);color:#2d1d17}body[data-design="espresso"] .btn.secondary,body[data-design="espresso"] .smallBtn{background:#50372b;color:#f8dfc5;border-color:#876046}
-body[data-design="espresso"] .tablewrap{background:#291e1a;border-color:#66483a}body[data-design="espresso"] .table th{background:#4a3329;color:#e3bb99;border-color:#75513c}
-body[data-design="espresso"] .table td{color:#f1dfce;border-color:#4b372d}body[data-design="espresso"] .table tbody tr:nth-child(even){background:#31221e}body[data-design="espresso"] .table tbody tr:hover{background:#433025}
-body[data-design="espresso"] .design-option{background:#3b2923;color:#e8c9af;border-color:#75533f}body[data-design="espresso"] .design-option[aria-pressed=true]{background:#dba170;color:#251813;border-color:#dba170}
-/* Soft feminine editorial: blush + burgundy, pill-shapes, airy surfaces */
-body[data-design="feminine"]{background:radial-gradient(circle at 90% 0%,#eac0ba,transparent 33%),linear-gradient(180deg,#fbefea,#f6e4e0);color:#553039}
-body[data-design="feminine"] .mast,body[data-design="feminine"] .design-bar,body[data-design="feminine"] .panel,body[data-design="feminine"] .card:not(.main){background:linear-gradient(145deg,#fff7f3,#fdf0ed);border-color:#e9cfc9;box-shadow:0 16px 38px #90586118;color:#5f3943;border-radius:36px}
-body[data-design="feminine"] .brand,body[data-design="feminine"] .sectionTitle{color:#703942;font-family:Georgia,serif;font-style:italic}
-body[data-design="feminine"] .card.main{background:linear-gradient(135deg,#a95e67,#743f4a);border-color:#af7b7b}
-body[data-design="feminine"] .eyebrow,body[data-design="feminine"] .season-badge{background:#fae5e2;color:#8e4e58;border-color:#e7c4bf}
-body[data-design="feminine"] .progress{background:#f1d7d1;border-color:#e9c5bf}body[data-design="feminine"] .progressfill{background:linear-gradient(90deg,#a65e6a,#db9b91)}
-body[data-design="feminine"] .pill,body[data-design="feminine"] .tip,body[data-design="feminine"] .milestone,body[data-design="feminine"] .forecastCard{background:#fff0ea;border-color:#e7ccc5;color:#6b3e47}
-body[data-design="feminine"] .milestone.done{background:#f1e9e3;border-color:#dcbdb5}
-body[data-design="feminine"] .field input,body[data-design="feminine"] .field select{background:#fffbf9;border-color:#e3c4bd;color:#603740;border-radius:24px}
-body[data-design="feminine"] .btn{background:linear-gradient(150deg,#b66a77,#914c5b);color:#fffaf8;border-radius:999px}
-body[data-design="feminine"] .btn.secondary,body[data-design="feminine"] .smallBtn{background:#fae9e5;color:#703c49;border-color:#e2c2bb}
-body[data-design="feminine"] .tablewrap{border-color:#e7c9c5;background:#fff9f6}body[data-design="feminine"] .table th{background:#f8e6e2;color:#8d5660;border-color:#eacdc8}body[data-design="feminine"] .table td{color:#593540;border-color:#f1e0dc}body[data-design="feminine"] .table tbody tr:nth-child(even){background:#fff3ef}
-body[data-design="feminine"] .design-option[aria-pressed=true]{background:#8f4c5b;color:#fff;border-color:#8f4c5b}
-/* Clean editorial: no patterns, quiet contrast, minimal depth */
-body[data-design="clean"]{background:#f5f1eb;color:#342f2a}
-body[data-design="clean"] .mast,body[data-design="clean"] .design-bar,body[data-design="clean"] .panel,body[data-design="clean"] .card:not(.main){background:#fffdfa;border-color:#e6ded3;box-shadow:0 5px 24px #4237280b;border-radius:24px}
-body[data-design="clean"] .mast:before,body[data-design="clean"] .mast:after,body[data-design="clean"] .panel:before,body[data-design="clean"] .card:after,body[data-design="clean"] .card.main:before,body[data-design="clean"] .card.main:after,body[data-design="clean"] .curve-divider{display:none}
-body[data-design="clean"] .brand,body[data-design="clean"] .sectionTitle{color:#40352d;font-family:system-ui,-apple-system,sans-serif;font-style:normal;font-weight:720}
-body[data-design="clean"] .card.main{background:#415046;border-color:#415046;border-radius:24px}
-body[data-design="clean"] .eyebrow,body[data-design="clean"] .season-badge{background:#e9eee7;color:#556451;border-color:#d9e0d5}
-body[data-design="clean"] .progress{background:#e9e7df;border-color:#d8d5ce}body[data-design="clean"] .progressfill{background:#64765c}
-body[data-design="clean"] .pill,body[data-design="clean"] .tip,body[data-design="clean"] .milestone,body[data-design="clean"] .forecastCard{background:#f6f4ef;border-color:#e4e0d9;color:#45443d;border-radius:18px}
-body[data-design="clean"] .milestone.done{background:#ecf1e9}
-body[data-design="clean"] .field input,body[data-design="clean"] .field select{background:#fff;border-color:#ddd8cf;color:#3e3932;border-radius:12px}
-body[data-design="clean"] .btn{background:#526252;color:#fff;border-radius:12px;box-shadow:none}body[data-design="clean"] .btn.secondary,body[data-design="clean"] .smallBtn{background:#f5f3ed;color:#425242;border-color:#d9ded4;box-shadow:none}
-body[data-design="clean"] .tablewrap{border-color:#e3dfd8;background:#fff}body[data-design="clean"] .table th{background:#f4f3ef;color:#5f675d;border-color:#dddcd4}body[data-design="clean"] .table td{color:#3e3c36;border-color:#ece9e3}body[data-design="clean"] .table tbody tr:nth-child(even){background:#faf9f6}
-body[data-design="clean"] .design-option[aria-pressed=true]{background:#4d5e4e;color:#fff;border-color:#4d5e4e}
-@media(max-width:730px){.design-bar{padding:15px}.design-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%}.design-option{font-size:11px;justify-content:flex-start}}
-</style></head><body data-theme="retro" data-design="retro"><main class="shell"><header class="mast"><div class="mast-copy"><div class="eyebrow">Retro Autumn Edition</div><h1 class="brand">Tilgung<span style="color:var(--accent)">.</span></h1><div class="sub">Moderne Übersicht für deine vollständige Startschuld, einzelne Lohnabrechnungen und automatische Durchschnittsberechnung.</div></div><div class="season-badge"><span class="season-dot"></span> Hochwertig · Warm · Übersichtlich</div></header>
-<div class="design-bar" aria-label="Design auswählen"><div class="design-bar-heading"><span>DEIN LOOK</span><strong>Wie soll deine Tilgung aussehen?</strong></div><div class="design-options" role="group" aria-label="Farbschema"><button type="button" class="design-option" data-design="retro" aria-pressed="true"><i class="swatch retro-swatch"></i><span>Retro Autumn</span></button><button type="button" class="design-option" data-design="espresso" aria-pressed="false"><i class="swatch espresso-swatch"></i><span>Espresso & Caramel</span></button><button type="button" class="design-option" data-design="feminine" aria-pressed="false"><i class="swatch feminine-swatch"></i><span>Femininer & Edler</span></button><button type="button" class="design-option" data-design="clean" aria-pressed="false"><i class="swatch clean-swatch"></i><span>Cleaner & Moderner</span></button></div></div>
-<section class="topcards" aria-label="Übersicht"><article class="card main"><div class="label">Ursprünglicher Unterhaltsrückstand</div><div class="number" id="startView">14.336,00 €</div><div class="label">Dein fester Ausgangspunkt</div></article><article class="card"><div class="label">Davon durch Einträge getilgt</div><div class="number sm olive" id="paidView">0,00 €</div><div class="muted">Nur erfasste Tilgungen</div></article><article class="card"><div class="label">Rechnerisch noch offen</div><div class="number sm rust" id="restView">14.336,00 €</div><div class="muted">Ohne ungebuchte Gebühren</div></article></section>
-<section class="section panel"><div class="progressHead"><h2 class="sectionTitle" style="margin:0">Dein Fortschritt</h2><strong id="percentView" style="color:var(--accent)">0 %</strong></div><div class="progress" role="progressbar" aria-label="Tilgungsfortschritt" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressOuter"><div class="progressfill" id="progressFill"></div></div><div class="progressHead"><div class="muted" id="entryCount">0 Lohnzettel erfasst</div><div class="pill" id="nextGoal">Nächstes Ziel: unter 10.000 €</div></div></section>
-<div class="curve-divider" aria-hidden="true"></div>
-<section class="section panel"><div class="eyebrow">Rückwirkend & laufend</div><h2 class="sectionTitle" style="margin-top:8px">Lohnzettel eintragen</h2><div class="sub">Trage die exakten Zahlen deiner Abrechnung ein. Der Betrag für den laufenden Unterhalt kann in jedem Monat anders sein. Den Rest berechnet die App automatisch.</div><form id="paymentForm"><div class="formrow"><div class="field"><label for="month">Abrechnungsmonat</label><input type="month" id="month" required></div><div class="field"><label for="date">Pfändung / Auszahlung am</label><input type="date" id="date" required></div><div class="field"><label for="garnished">Insgesamt gepfändet (€)</label><input id="garnished" type="number" inputmode="decimal" min="0" step="0.01" required placeholder="z. B. 781,14"></div><div class="field"><label for="current">Davon laufender Unterhalt (€)</label><input id="current" type="number" inputmode="decimal" min="0" step="0.01" required value="394.00"></div><div class="field"><label for="towardsDebt">Davon alte Rückstände (€)</label><input id="towardsDebt" type="text" value="0,00 €" readonly aria-label="Automatisch berechnete Tilgung"></div><div class="field"><label for="note">Notiz (optional)</label><input id="note" maxlength="180" placeholder="z. B. September-Abrechnung"></div></div><div class="actions"><button type="submit" class="btn" id="submitBtn">+ Lohnzettel speichern</button><button type="button" class="btn secondary hidden" id="cancelEdit">Bearbeiten abbrechen</button></div><div class="tip">Beispiel: 781,14 € gepfändet – 394,00 € laufender Unterhalt = 387,14 € Tilgung alter Schulden. Falls laut Abrechnung noch andere Beträge enthalten sind, kannst du die Zuordnung später korrigieren. Neue Einträge werden <strong>nicht</strong> mit früher geschätzten 3.926 € verrechnet.</div></form></section>
-<section class="section panel"><div class="progressHead"><h2 class="sectionTitle">Eingetragene Lohnabrechnungen</h2><div class="muted" id="totalGarnished"></div></div><div class="tablewrap"><table class="table"><thead><tr><th>Monat</th><th>Datum</th><th>Gepfändet</th><th>Laufend</th><th>Altschuld getilgt</th><th>Rest danach*</th><th>Notiz</th><th>Aktionen</th></tr></thead><tbody id="tbody"></tbody></table></div><div id="empty" class="empty">Noch keine Lohnzettel eingetragen. Starte einfach mit dem ältesten, den du vorliegen hast.</div><div class="muted" style="margin-top:10px">* Restschuld nach zeitlicher Reihenfolge aller eingetragenen Zahlungen, nicht nach Eingabereihenfolge.</div></section>
-<section class="section panel"><h2 class="sectionTitle">Meilensteine auf dem Weg</h2><div id="milestoneGrid" class="milestoneGrid"></div><div class="tip">Meilensteine werden anhand deiner tatsächlich eingetragenen Abrechnungen automatisch abgehakt.</div></section>
-<section class="section panel"><h2 class="sectionTitle">Monatsübersicht</h2><div class="sub">Zusammenfassung der erfassten Lohnzettel nach Abrechnungsmonat.</div><div class="tablewrap" style="margin-top:12px"><table class="table"><thead><tr><th>Monat</th><th>Gepfändet</th><th>Laufender Unterhalt</th><th>Tilgung Altschuld</th></tr></thead><tbody id="monthlyRows"></tbody></table></div><div id="monthlyEmpty" class="empty">Noch keine Monate erfasst.</div></section>
-<section class="section panel"><h2 class="sectionTitle">Tilgungsprognose</h2><div class="sub">Die App berechnet den bisherigen Monatsdurchschnitt ausschließlich aus deinen eingetragenen Lohnabrechnungen. Ohne Einträge gibt es noch keine Prognose.</div><div class="formrow"><div class="field"><label for="forecastRate">Bisheriger Monatsdurchschnitt der Tilgung (€)</label><input id="forecastRate" type="text" value="Noch keine Daten" readonly></div><div class="field"><label for="forecastMonth">Prognose ab Monat</label><input id="forecastMonth" type="month"></div><div class="field"><label for="forecastOngoing">Laufender Unterhalt / Monat (€)</label><input id="forecastOngoing" type="number" min="0" step="0.01" value="394.00"></div></div><div class="actions"><button type="button" class="btn" id="calcForecast">Prognose berechnen</button></div><div id="forecastSummary" class="tip" role="status">Trage deine Lohnabrechnungen ein, damit wir deinen Durchschnitt und die Prognose berechnen können.</div><div class="tablewrap" style="margin-top:12px"><table class="table"><thead><tr><th>Monat</th><th>Tilgung Rückstand</th><th>Restschuld</th></tr></thead><tbody id="forecastRows"></tbody></table></div><div class="muted">Unverbindliche Modellrechnung ohne zukünftige Gebühren, Zinsen oder neue Rückstände. Es werden keine Prognosebeträge als tatsächliche Zahlung gebucht.</div></section>
-<section class="section panel"><h2 class="sectionTitle">Einstellungen & Datensicherung</h2><div class="settings"><div class="field"><label for="starting">Ursprünglicher Rückstand (€)</label><input type="number" id="starting" min="0" step="0.01" value="14336.00"></div><button class="btn secondary" id="saveStart" type="button">Startbetrag speichern</button></div><div class="actions"><button class="btn secondary" id="exportJson" type="button">↓ Datensicherung (JSON)</button><button class="btn secondary" id="exportCsv" type="button">↓ Tabelle (CSV)</button><button class="btn secondary" id="importBtn" type="button">↑ Sicherung laden</button><input type="file" accept=".json,application/json" id="fileInput" class="hidden"><button class="btn danger" id="clear" type="button">Alle Lohnzettel löschen</button></div><div class="tip">Deine Daten werden ausschließlich in diesem Browser gespeichert und nicht automatisch mit GitHub synchronisiert. Bitte exportiere regelmäßig eine Sicherung. Wenn du den Startbetrag änderst, bleiben deine Lohnzettel erhalten.</div></section><p class="foot">Dies ist dein privater Rechentracker, keine offizielle Forderungsaufstellung. Die tatsächliche Zuordnung von Zahlungen, möglichen Zinsen, Gebühren und Nachforderungen richtet sich nach den Abrechnungen der zuständigen Stelle. Ein monatlicher Unterhaltsbetrag darf nicht automatisch von jeder einzelnen Pfändung abgezogen werden, wenn mehrere Pfändungen im selben Monat erfolgen.</p></main>
-<script>
-(()=>{'use strict';const KEY='tilgung-herbst-v2';const $=id=>document.getElementById(id);const cents=x=>Math.round(Number(x)*100);const eur=c=>new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'}).format(c/100);const dateNow=()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};const defaults={starting:1433600,payments:[]};let state=structuredClone(defaults),editing=null;try{let s=JSON.parse(localStorage.getItem(KEY));if(s&&Number.isSafeInteger(s.starting)&&s.starting>=0&&Array.isArray(s.payments)&&s.payments.every(valid))state=s;}catch{}function valid(e){return e&&typeof e.id==='string'&&/^\d{4}-(0[1-9]|1[0-2])$/.test(e.month)&&/^\d{4}-\d{2}-\d{2}$/.test(e.date)&&Number.isSafeInteger(e.garnished)&&Number.isSafeInteger(e.current)&&e.garnished>=0&&e.current>=0&&e.current<=e.garnished&&typeof e.note==='string'}function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch{alert('Die Daten konnten nicht im Browser gespeichert werden. Bitte eine Sicherung exportieren.')}render()}function sorted(){return [...state.payments].sort((a,b)=>a.month.localeCompare(b.month)||a.date.localeCompare(b.date)||a.id.localeCompare(b.id))}function render(){const entries=sorted();const paid=entries.reduce((x,p)=>x+p.garnished-p.current,0);const rest=Math.max(0,state.starting-paid);const pct=state.starting?Math.min(100,paid/state.starting*100):100;$('startView').textContent=eur(state.starting);$('paidView').textContent=eur(paid);$('restView').textContent=eur(rest);$('percentView').textContent=pct.toLocaleString('de-DE',{maximumFractionDigits:1})+' %';$('progressFill').style.width=pct+'%';$('progressOuter').setAttribute('aria-valuenow',pct.toFixed(1));$('entryCount').textContent=entries.length+' Lohnzettel erfasst';const goals=[1000000,750000,716800,500000,358400,250000,100000,0];const goal=goals.find(x=>rest>x);$('nextGoal').textContent=rest===0?'Alle Ziele erreicht!':goal===undefined?'Fast geschafft!':'Nächstes Ziel: '+(goal===0?'0 €': 'unter '+eur(goal));$('starting').value=(state.starting/100).toFixed(2);$('totalGarnished').textContent='Insgesamt gepfändet: '+eur(entries.reduce((x,p)=>x+p.garnished,0));$('empty').classList.toggle('hidden',entries.length>0);$('tbody').replaceChildren();let balance=state.starting;entries.forEach(p=>{const debt=p.garnished-p.current;balance=Math.max(0,balance-debt);const tr=document.createElement('tr');const values=[p.month.slice(5)+'.'+p.month.slice(0,4),p.date.slice(8)+'.'+p.date.slice(5,7)+'.'+p.date.slice(0,4),eur(p.garnished),eur(p.current),eur(debt),eur(balance),p.note];values.forEach((v,i)=>{let td=document.createElement('td');td.textContent=v;if(i>=2&&i<=5)td.className='money '+(i===4?'positive':'');if(i===6)td.className='noteCell';tr.append(td)});let td=document.createElement('td');let edit=document.createElement('button');edit.className='smallBtn';edit.textContent='Ändern';edit.addEventListener('click',()=>editEntry(p));let del=document.createElement('button');del.className='smallBtn';del.textContent='Löschen';del.style.marginLeft='5px';del.addEventListener('click',()=>{if(confirm('Diesen Lohnzettel wirklich löschen?')){state.payments=state.payments.filter(e=>e.id!==p.id);save()}});td.append(edit,del);tr.append(td);$('tbody').append(tr)})}function recompute(){const g=cents($('garnished').value||0),c=cents($('current').value||0);$('towardsDebt').value=c>g?'Laufend größer als gepfändet':eur(g-c)}function editEntry(p){editing=p.id;$('month').value=p.month;$('date').value=p.date;$('garnished').value=(p.garnished/100).toFixed(2);$('current').value=(p.current/100).toFixed(2);$('note').value=p.note;$('submitBtn').textContent='Änderungen speichern';$('cancelEdit').classList.remove('hidden');recompute();$('paymentForm').scrollIntoView({behavior:'smooth',block:'center'})}function resetForm(){editing=null;$('paymentForm').reset();$('date').value=dateNow();$('month').value=dateNow().slice(0,7);$('current').value='394.00';$('submitBtn').textContent='+ Lohnzettel speichern';$('cancelEdit').classList.add('hidden');recompute()}$('garnished').addEventListener('input',recompute);$('current').addEventListener('input',recompute);$('cancelEdit').addEventListener('click',resetForm);$('paymentForm').addEventListener('submit',e=>{e.preventDefault();const p={id:editing||String(Date.now())+'-'+Math.random().toString(36).slice(2),month:$('month').value,date:$('date').value,garnished:cents($('garnished').value),current:cents($('current').value),note:$('note').value.trim()};if(!valid(p)){alert('Bitte die Beträge und das Datum prüfen. Der laufende Unterhalt darf nicht größer sein als die Pfändung.');return}if(editing)state.payments=state.payments.map(x=>x.id===editing?p:x);else state.payments.push(p);save();resetForm()});$('saveStart').addEventListener('click',()=>{const v=cents($('starting').value);if(!Number.isSafeInteger(v)||v<0)return alert('Bitte einen gültigen Startbetrag eintragen.');state.starting=v;save()});function download(name,data,type){const url=URL.createObjectURL(new Blob([data],{type}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}$('exportJson').addEventListener('click',()=>download('tilgung-sicherung.json',JSON.stringify(state,null,2),'application/json'));$('exportCsv').addEventListener('click',()=>{const quote=x=>'"'+String(x).replaceAll('"','""')+'"';const safe=x=>/^[\s]*[=+@\-]/.test(String(x))?"'"+x:x;const lines=['Monat;Datum;Gepfändet;Laufend;Tilgung Altschuld;Notiz',...sorted().map(e=>[e.month,e.date,e.garnished,e.current,e.garnished-e.current,safe(e.note)].map((v,i)=>quote(i>=2&&i<=4?(v/100).toFixed(2).replace('.',','):v)).join(';'))];download('tilgung-lohnzettel.csv','\ufeff'+lines.join('\r\n'),'text/csv;charset=utf-8')});$('importBtn').addEventListener('click',()=>$('fileInput').click());$('fileInput').addEventListener('change',async e=>{const file=e.target.files?.[0];if(!file)return;try{if(file.size>3000000)throw Error('Datei zu groß');const v=JSON.parse(await file.text());if(!v||!Number.isSafeInteger(v.starting)||v.starting<0||!Array.isArray(v.payments)||v.payments.length>10000||!v.payments.every(valid))throw Error('Ungültiges Sicherungsformat');if(confirm('Alle aktuellen Daten durch diese Sicherung ersetzen?')){state=v;save();resetForm()}}catch(err){alert('Import fehlgeschlagen: '+err.message)}e.target.value=''});$('clear').addEventListener('click',()=>{if(confirm('Wirklich alle eingetragenen Lohnzettel löschen?')){state.payments=[];save();resetForm()}});resetForm();render()})();
-</script><script>
-(()=>{'use strict';const $=id=>document.getElementById(id),KEY='tilgung-herbst-v2';const euro=c=>new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR'}).format(c/100);const ymName=ym=>new Intl.DateTimeFormat('de-DE',{month:'long',year:'numeric'}).format(new Date(ym+'-01T12:00:00'));const addMonth=(ym,i)=>{const [y,m]=ym.split('-').map(Number);const d=new Date(y,m-1+i,1);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')};const current=new Date();const thisMonth=current.getFullYear()+'-'+String(current.getMonth()+1).padStart(2,'0');$('forecastMonth').value=addMonth(thisMonth,1);const SETTINGS='tilgung-herbst-forecast-v1';try{const f=JSON.parse(localStorage.getItem(SETTINGS));if(f&&typeof f==='object'){if(Number.isFinite(f.ongoing))$('forecastOngoing').value=f.ongoing;if(/^\d{4}-(0[1-9]|1[0-2])$/.test(f.month))$('forecastMonth').value=f.month}}catch{}
-function read(){try{const s=JSON.parse(localStorage.getItem(KEY));return s&&Number.isSafeInteger(s.starting)&&Array.isArray(s.payments)?s:{starting:1433600,payments:[]}}catch{return {starting:1433600,payments:[]}}}
-function refresh(){const s=read(),payments=s.payments;let paid=0;const grouped=new Map();payments.forEach(p=>{if(!Number.isSafeInteger(p.garnished)||!Number.isSafeInteger(p.current))return;const debt=p.garnished-p.current;paid+=debt;const t=grouped.get(p.month)||{gross:0,current:0,debt:0};t.gross+=p.garnished;t.current+=p.current;t.debt+=debt;grouped.set(p.month,t)});const rest=Math.max(0,s.starting-paid);const tbody=$('monthlyRows');tbody.replaceChildren();[...grouped].sort((a,b)=>b[0].localeCompare(a[0])).forEach(([month,v])=>{const tr=document.createElement('tr');[ymName(month),euro(v.gross),euro(v.current),euro(v.debt)].forEach(val=>{const td=document.createElement('td');td.textContent=val;tr.append(td)});tbody.append(tr)});$('monthlyEmpty').classList.toggle('hidden',grouped.size>0);const average=grouped.size?Math.round(paid/grouped.size):null;$('forecastRate').value=average===null?'Noch keine Daten':euro(average);if(!grouped.size){$('forecastSummary').textContent='Noch keine Lohnabrechnungen erfasst. Sobald du Beträge eingetragen hast, wird der Monatsdurchschnitt berechnet.';}const milestones=[['Unter 10.000 €',1000000,false],['Unter 7.500 €',750000,false],['50 % geschafft',716800,true],['Unter 5.000 €',500000,false],['75 % geschafft',358400,true],['Unter 2.500 €',250000,false],['Unter 1.000 €',100000,false],['Schuldenfrei – 0 €',0,true]];const container=$('milestoneGrid');container.replaceChildren();milestones.forEach(([title,limit,inclusive])=>{const ok=inclusive?rest<=limit:rest<limit;const div=document.createElement('div');div.className='milestone'+(ok?' done':'');div.textContent=(ok?'✓ ':'○ ')+title;container.append(div)});calculate(rest,false,average)}
-function calculate(rest,persist,average){const rate=average,ongoing=Math.round(Number($('forecastOngoing').value)*100),start=$('forecastMonth').value,summary=$('forecastSummary'),rows=$('forecastRows');rows.replaceChildren();if(rate===null){summary.textContent='Noch keine Lohnabrechnungen erfasst. Trage zuerst deine tatsächlichen Pfändungsbeträge ein.';return}if(!Number.isSafeInteger(rate)||rate<0||!Number.isSafeInteger(ongoing)||ongoing<0||!/^\d{4}-(0[1-9]|1[0-2])$/.test(start)){summary.textContent='Bitte gültige Prognosewerte eingeben.';return}if(persist){try{localStorage.setItem(SETTINGS,JSON.stringify({ongoing:ongoing/100,month:start}))}catch{}}if(rest===0){summary.textContent='Deine erfassten Zahlungen haben den Rückstand bereits vollständig ausgeglichen.';return}if(rate===0){summary.textContent='Trage eine monatliche Tilgung größer als 0 € ein.';return}const count=Math.ceil(rest/rate);if(count>1200){summary.textContent='Mit dieser Tilgung würde die Rückzahlung mehr als 100 Jahre dauern.';return}const end=addMonth(start,count-1);summary.textContent='Bei '+euro(rate)+' Rückstandstilgung und '+euro(ongoing)+' laufendem Unterhalt pro Monat (zusammen '+euro(rate+ongoing)+') wäre der Rückstand rechnerisch '+ymName(end)+' nach '+count+' Monaten getilgt.';for(let i=0;i<Math.min(count,24);i++){const before=Math.max(0,rest-rate*i),debt=Math.min(before,rate);const tr=document.createElement('tr');[ymName(addMonth(start,i)),euro(debt),euro(before-debt)].forEach(v=>{const td=document.createElement('td');td.textContent=v;tr.append(td)});rows.append(tr)}if(count>24){const tr=document.createElement('tr');const td=document.createElement('td');td.colSpan=3;td.textContent='… '+(count-25)+' weitere Monate …';tr.append(td);rows.append(tr);const last=document.createElement('tr');[ymName(end),euro(rest-rate*(count-1)),euro(0)].forEach(v=>{const td=document.createElement('td');td.textContent=v;last.append(td)});rows.append(last)}}
-$('calcForecast').addEventListener('click',()=>{const s=read(),grouped=new Set(s.payments.map(p=>p.month));const paid=s.payments.reduce((v,p)=>v+p.garnished-p.current,0);calculate(Math.max(0,s.starting-paid),true,grouped.size?Math.round(paid/grouped.size):null)});
-// Watch only the summary label: the original app redraws it after each data mutation.
-const target=$('entryCount');new MutationObserver(refresh).observe(target,{childList:true,characterData:true,subtree:true});refresh();
-})();
-</script><script>
-(()=>{'use strict';
-const key='tilgung-vier-designs-v1';
-const allowed=['retro','espresso','feminine','clean'];
-const buttons=[...document.querySelectorAll('[data-design]')];
-function choose(theme){
-  if(!allowed.includes(theme))theme='retro';
-  document.body.dataset.design=theme;
-  buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.design===theme)));
-  const themeColors={retro:'#f5eadc',espresso:'#211916',feminine:'#f7e7e1',clean:'#f5f0e8'};
-  const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=themeColors[theme];
-  try{localStorage.setItem(key,theme)}catch{}
-}
-let saved='retro';try{saved=localStorage.getItem(key)||saved}catch{}
-choose(saved);
-buttons.forEach(b=>b.addEventListener('click',()=>choose(b.dataset.design)));
-})();
-</script></body></html>
+      <section class="view" id="view-stats" aria-labelledby="stats-heading" hidden>
+        <div class="page-heading"><p class="overline">JEDER SCHRITT ZÄHLT</p><h2 id="stats-heading">Statistik<span class="dot">.</span></h2><p>Deine tatsächlichen Pfändungen, der Schuldenabbau und alle wichtigen Meilensteine.</p></div>
+        <div class="stats-grid"><div class="stat-surface"><span>Bereits getilgt</span><strong id="statsPaid">0,00 €</strong></div><div class="stat-surface"><span>Durchschnitt pro Monat</span><strong id="statsAverage">–</strong></div><div class="stat-surface"><span>Gepfändet gesamt</span><strong id="statsGarnished">0,00 €</strong></div><div class="stat-surface"><span>Erfasste Monate</span><strong id="statsMonths">0</strong></div></div>
+        <div class="sheet-surface full-chart"><div class="section-heading compact"><h3>Deine Restschuld im Verlauf</h3></div><div id="statsChart" class="chart-box" role="img" aria-label="Verlauf der Restschuld"></div></div>
+        <div class="section-heading spaced"><div><p class="overline">KLEINE ERFOLGE</p><h3>Deine Meilensteine</h3></div></div>
+        <div class="milestone-list" id="milestones"></div>
+        <div class="section-heading spaced"><div><p class="overline">ZUSAMMENGEFASST</p><h3>Monatsübersicht</h3></div></div>
+        <div class="month-list" id="monthList"></div>
+      </section>
+
+      <section class="view" id="view-forecast" aria-labelledby="forecast-heading" hidden>
+        <div class="page-heading"><p class="overline">BLICK NACH VORN</p><h2 id="forecast-heading">Prognose<span class="dot">.</span></h2><p>Eine vorsichtige Hochrechnung – ausschließlich auf Basis der bereits eingetragenen Lohnabrechnungen.</p></div>
+        <div class="forecast-hero"><span>Ø monatlich auf Altschulden</span><strong id="forecastAvg">Noch keine Daten</strong><small>Automatisch berechnet – nicht manuell geschätzt</small></div>
+        <div class="sheet-surface"><div class="section-heading compact"><h3>Dein möglicher Tilgungsweg</h3></div><div class="fields"><label>Beginn der zukünftigen Tilgung<input type="month" id="forecastStart"></label><label>Laufender Unterhalt pro Monat (€)<input type="number" id="forecastOngoing" min="0" step="0.01" inputmode="decimal" value="394"></label></div>
+          <p class="helper">Der laufende Unterhalt wird zusätzlich zur durchschnittlichen Rückstandstilgung gerechnet und reduziert nicht die alten Schulden.</p>
+          <button class="btn primary full" type="button" id="updateForecast">Prognose berechnen <svg class="ico"><use href="#ic-chevron"/></svg></button>
+        </div>
+        <div class="forecast-answer" id="forecastAnswer" aria-live="polite">Trage zuerst deine Lohnabrechnungen ein. Danach erscheint deine persönliche Prognose.</div>
+        <div class="forecast-mini" id="forecastHighlights" hidden><div><span>Geschätzte Dauer</span><strong id="forecastDuration">–</strong></div><div><span>Rechnerisch schuldenfrei</span><strong id="forecastFinish">–</strong></div></div>
+        <div class="sheet-surface" id="forecastTableCard" hidden><h3>Voraussichtliche Monatsraten</h3><div class="forecast-rows" id="forecastRows"></div></div>
+        <p class="legal-hint">Keine offizielle Forderungsabrechnung. Weitere Rückstände, Gebühren oder Zinsen können die tatsächliche Dauer verändern.</p>
+      </section>
+
+      <section class="view" id="view-more" aria-labelledby="more-heading" hidden>
+        <div class="page-heading"><p class="overline">GESTALTE DEINE APP</p><h2 id="more-heading">Mehr<span class="dot">.</span></h2><p>Vier Looks, dieselben echten Zahlen. Dein Designwechsel beeinflusst niemals deine gespeicherten Lohnzettel.</p></div>
+        <div class="section-heading compact"><h3>Deine vier Designs</h3></div>
+        <div class="theme-list" role="group" aria-label="App-Design auswählen">
+          <button class="theme-tile" data-select-theme="retro" type="button" aria-pressed="true"><span class="tile-preview retro-swatch"><span class="tile-checkers"></span><i></i></span><span class="tile-caption"><strong>Retro Autumn</strong><small>Karos, Rostorange und warme Creme</small></span><span class="select-mark">✓</span></button>
+          <button class="theme-tile" data-select-theme="espresso" type="button" aria-pressed="false"><span class="tile-preview espresso-swatch"><i></i></span><span class="tile-caption"><strong>Espresso & Caramel</strong><small>Dunkel, luxuriös und karamellwarm</small></span><span class="select-mark">✓</span></button>
+          <button class="theme-tile" data-select-theme="feminine" type="button" aria-pressed="false"><span class="tile-preview feminine-swatch"><i></i></span><span class="tile-caption"><strong>Femininer & Edler</strong><small>Rosé, Blush und Burgunderrot</small></span><span class="select-mark">✓</span></button>
+          <button class="theme-tile" data-select-theme="clean" type="button" aria-pressed="false"><span class="tile-preview clean-swatch"><i></i></span><span class="tile-caption"><strong>Cleaner & Moderner</strong><small>Creme, Taupe und dezentes Olive</small></span><span class="select-mark">✓</span></button>
+        </div>
+        <div class="sheet-surface settings-sheet"><div class="section-heading compact"><h3>Startschuld</h3></div><label class="block-label">Ursprünglicher Unterhaltsrückstand (€)<input id="startingAmount" type="number" min="0" step="0.01" inputmode="decimal" value="14336"></label><button id="saveStarting" class="btn subtle full" type="button">Startbetrag aktualisieren</button><p class="helper">Die ursprüngliche Schuld bleibt erhalten, bis du sie hier ausdrücklich änderst. Einzelne Pfändungen werden nicht vorweggenommen.</p></div>
+        <div class="sheet-surface settings-sheet"><div class="section-heading compact"><h3>Datensicherung</h3></div><p class="helper">Deine Daten liegen nur in deinem Browser auf diesem Gerät, nicht auf GitHub. Sichere sie regelmäßig – besonders bevor du eine neue Version öffnest.</p><div class="backup-actions"><button class="btn subtle" type="button" id="exportJson"><svg class="ico"><use href="#ic-down"/></svg> JSON sichern</button><button class="btn subtle" type="button" id="exportCsv"><svg class="ico"><use href="#ic-down"/></svg> CSV exportieren</button><button class="btn subtle" type="button" id="importTrigger"><svg class="ico"><use href="#ic-upload"/></svg> Sicherung laden</button><input type="file" id="importFile" accept=".json,application/json" hidden></div><button class="text-danger" id="clearPayments" type="button">Alle Lohnzettel löschen</button></div>
+        <p class="legal-hint">Die Verrechnung auf rückständigen Unterhalt ist eine rechnerische Annahme. Maßgeblich ist die Forderungsaufstellung der zuständigen Stelle.</p>
+      </section>
+    </main>
+    <nav class="bottom-nav" aria-label="Hauptnavigation">
+      <button data-go="home" class="nav-item selected" type="button" aria-current="page"><svg class="ico"><use href="#ic-home"/></svg><span>Übersicht</span></button>
+      <button data-go="payments" class="nav-item" type="button"><svg class="ico"><use href="#ic-receipt"/></svg><span>Zahlungen</span></button>
+      <button data-go="stats" class="nav-item" type="button"><svg class="ico"><use href="#ic-chart"/></svg><span>Statistik</span></button>
+      <button data-go="forecast" class="nav-item" type="button"><svg class="ico"><use href="#ic-clock"/></svg><span>Prognose</span></button>
+      <button data-go="more" class="nav-item" type="button"><svg class="ico"><use href="#ic-more"/></svg><span>Mehr</span></button>
+    </nav>
+  </div>
+  <script src="./app.js" defer></script>
+</body>
+</html>
